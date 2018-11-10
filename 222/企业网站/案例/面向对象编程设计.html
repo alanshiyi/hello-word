@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的练习</title>
+</head>
+<script>
+
+/*function foo(){
+	var x=1;
+	function bar(){
+		var y=x+1;
+	alert(y)
+}bar()
+var z=y+1;
+
+}foo()
+
+
+var global=1;
+function f(){
+var local=2;
+global++;
+alert(local)
+alert(global);//里面可以用外面的变量
+}f()
+
+function f(){ 
+local=1;
+
+}
+f()
+alert(local)
+
+
+var a=123;
+function f(){
+	a++;
+	alert(a);//undefind
+	var a=1;
+	alert(a);//1
+}f()
+alert(a)
+
+
+function f(){
+	var x='Hello'+y;
+	alert(x);
+	var y='bob'
+
+}f()
+
+
+var MYAPP={}
+MYAPP.name='myapp';
+MYAPP.version=1.0;
+MYAPP.foo=function(){
+	return 'foo';
+
+}
+
+
+function f(a,b,c){
+	var i,ar=[];
+	for(var i=0;i<3;i++){
+		ar[i]=arguments[i]*2;
+	}
+	return 2;
+
+}
+
+function addOne(a){
+	return a+1
+}
+
+var myarr=[];
+myarr=f(10,20,30)
+alert(myarr)
+for(var i=0;i<3;i++){
+	myarr[i]=addOne(myarr[i])t
+}
+alert(myarr)
+
+
+(function(){alert('boo')})()//即时函数调用
+
+
+(function(name){alert('hello'+name+'!')})('alanshiyi')//可以传参
+
+function outer(param){
+	function(theinput){
+		return  theinput*2;
+	}
+	return 'The result is '+inner(param)
+}
+
+
+alert(a)
+ a=1;
+
+
+alert(a)
+var a=1;
+function fn1(){alert(2);}
+
+
+alert(a); 
+var a=1;
+alert(a);
+function a(){alert(2);};
+alert(a);
+var a=3;
+alert(a);
+function a(){
+	alert(4);};
+alert(a);
+
+var a=1;
+function fn1(){
+	alert(a);
+	var a=2;
+}
+fn1();
+alert(a);
+
+var a=1;
+functon fn1(){
+	alert(a);//undefined
+	var a=2;//局部变量
+
+}
+fn1();
+alert(a)// a=1
+
+
+var a=1;
+function fn1(a){
+	alert(a);//a=1 
+	a=2;//全局作用域；
+}
+fn1();
+alert(a)//a=2;  
+
+
+alert(a);//function a() alert(4)
+var a=1;
+function a(){
+	alert(2);
+}
+alert(a);//1
+var a=3;
+alert(a);//3
+function a(){
+	alet(4)
+}
+alert(a)//3
+
+
+
+var a=1;
+function fn1(){
+	alert(a);//undefined
+    var a=2;
+
+}
+fn1();
+alert(a)//1
+
+var a=1;
+function fn1(){
+	alert(a)//1
+	a=2;
+}
+fn1();
+alert(a);//2
+
+var a=1;
+function fn1(a){
+	alert(a)//undefined 
+	a=2;
+}
+fn1();
+alert(a);//1
+
+
+
+
+var a=1;
+function fn1(a){
+alert(a);
+a=2;
+
+}
+fn1(a);
+alert(a);
+
+
+function sum(arr){
+	return arr.reduce(function(x,y){
+		return x+y;
+
+	})
+}
+alert(sum([1,2,3,4,5]))
+
+
+function a(){
+	var i=0;
+	function b(){
+		alert(++i)
+
+	}
+	return b;
+}
+var c=a();
+c();
+
+function makeFunc() {
+    var name = "Mozilla";
+    function displayName() {
+        alert(name);
+    }
+    return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+
+//js中会形成闭包，
+
+function makeAdder(x){
+	return function(y){
+		return x+y;
+	}
+}
+var add5=makeAdder(5);
+var add10=makeAdder(10);
+alert(add5(2));//7
+alert(add10(2));//12
+
+
+
+var inner;
+var f=function(){
+	var b='local variable';
+	var n=function(){
+		return b;
+	}
+	inner=n;
+}
+f()
+
+
+
+
+
+var a=1;
+function fn1(a){
+	alert(a)
+	a=2;
+}
+fn1(a)
+alert(a)
+
+
+alert(a);//function a(){alert(4)}
+var a=1;
+alert(a);//1
+function a(){
+	alert(2)
+}
+var a=3;
+alert(a);//3
+function a(){alert(4);}
+alert(a)//3
+alert(a);
+alert(b)
+var a=1;
+function a(){
+	alert(5);
+}
+
+function b(){
+	alert(7)
+}
+
+alert(a);
+var a=1;
+function c(){
+alert(a)
+
+}
+
+
+var a=1;
+function fn1(){
+	alert(a)//undefind
+	var a=2;
+	alert(a)//局部变量
+
+}
+fn1()
+alert(a)全局变量
+
+var a=1;
+function fn1(){
+	alert(a)
+	a=2//作用域链往上查找
+
+}
+fn1();
+alert(a)
+
+
+var a=1;
+function fn1(a){
+	alert(a)//undefind
+	a=2
+}fn1(a)
+alert(a)//1
+
+
+var num=0;
+function f(){
+	num++;
+}
+function f1(){
+	num--;
+}
+f1();
+f();
+f1();
+alert(num)
+
+
+
+var str='';
+function f(){
+	 var a='xxx';
+	str=a;
+}
+f()
+alert(str)
+
+
+
+function f(){
+	var a='xxx'
+	f1(a);
+}f()
+
+function f1(c){
+	alert(c)
+}
+
+
+alert(fn1)
+	if(true){
+}
+
+		var a=1;
+		function fn1(){
+			alert(123)
+		}
+
+
+
+window.onload=function(){
+var aBth=document.getElementsByTagName('input')
+
+for(var i=0;i<aBth.length;i++){
+	aBth[i].onclick=function(){
+	//alert(i);//3
+		//aBth[i].style.background='yellow';//不能直接调用 i相当于3
+ for(var i=0;i<aBth.length;i++){//这一步是必须的
+
+ 	
+ 	aBth[i].style.background='yellow';
+ }
+
+	}
+
+}
+}	
+
+
+
+alert(a);//function()
+var a=1;
+alert(a);//1
+function (){
+	alert(2);
+}
+var a=3;
+alert(a);//3
+function a(){
+	alert(4)
+}
+alert(a)//3
+
+
+
+
+var a=1;
+function f(){
+	alert(a)
+	a=3;
+}
+f()
+alert(a)
+
+
+var a=1;
+function f(a){
+alert(a)//1
+a=2;
+
+}
+f(a)
+alert(a);//1
+
+//获取函数内的值
+var str='';
+function f(){
+	
+	var a='alanshiyi '
+  str=a;
+
+}
+f()
+alert(str)
+
+
+function f(){
+	var a='99999';
+  f1(a);
+}
+f();
+
+function f1(c){
+alert(c)
+
+}
+
+
+function f(){
+	var a='alanshiyi'
+	f1(a);
+}
+f();
+function f1(a){
+	alert(a)
+}
+
+function f(){
+	var a='alanshhiyi'
+}
+f()
+function f1(){
+	alert(a);
+}
+
+window.onload=function(){
+
+var aBtn=document.getElementsByTagName('input')
+for(var i=0;i<aBtn.length;i++){
+	aBtn[i].onclick=function(){
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].style.background='yellow';
+		}
+	}
+}
+
+}
+
+
+var g=1;
+function f(g){
+	alert(g)
+	 y=2;
+	}
+f()
+alert(g)
+
+
+var str='';
+function f(){
+	local=2;
+str=local;
+}
+
+alert(str)
+alert(local)
+
+
+
+function f(){
+	local=2;
+}
+alert(local)
+f()
+alert(local)
+
+function()
+{
+	var arr=[];
+	for(i=0;i<3;i++)
+	{
+		arr[i]=fucntion(){
+			return i;
+		}
+	}
+	return arr;
+
+}
+
+
+
+window.onload=function(){
+var oBth=document.getElementsByTagName('input')
+for(var i=0;i<oBth.length;i++){
+	oBth[i].onmouseover=function(){
+for( var i=0;i<oBth.length;i++){
+oBth[i].style.background='yellow';
+
+}
+}
+}
+}
+
+
+
+function fn1(a,b){
+	alert(a+b)
+}
+
+fn1(100,'chu')
+
+
+
+f('shiyi')
+f('miaowei')
+f('妙味课堂')
+function f(a){
+	alert(a.charAt(2));
+
+}
+
+function f4(){
+	
+alert(4)
+}
+f3(f4)
+function f3(fn){
+fn()
+}//函数作为参数
+
+f(window,document)
+function f(w,d){
+w.onload=function(){
+d.body.innerHTML=123;
+}
+}//函数传参
+*/
+//函数传参的应用
+//函数在遇到不同参数是要进行一一对应区别开来
+f(100)
+f('miaov')
+f(function(){alert(1);})
+function f(a){
+	if(typeof a==='number'&&a===a){//数字 但要排除NAN
+		alert(a+20);
+
+	}else if(typeof a==='String'){
+alert(a.charAt(2))//字符串特有的
+	}else if(typeof a==='function'){
+		a();
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+<input type="button" value="按钮1">
+<input type="button" value="按钮2">	
+<input type="button" value="按钮3">
+</body>
+</html>

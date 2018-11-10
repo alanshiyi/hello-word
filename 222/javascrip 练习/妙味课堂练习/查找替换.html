@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style >
+
+*{
+	margin :0;
+	padding:0;
+}
+
+body{
+	background-color: #666;
+}
+
+#wrap{
+ width :600px;
+ height:500px;
+ background:#fff;
+ margin:50px auto;
+ position :relative;
+ border:1px solid #e8e8e8;
+
+
+}
+
+#textContent{
+ 
+ border-radius: 10px;
+ background: green;
+ position: absolute;
+ top:50px;
+left:20px;
+box-shadow: 0 0 15px black;
+padding: 10px;
+width: 400px;
+color:#fff;
+
+}
+
+#fun{
+width: 50px;
+height: 100px;
+text-align: center;
+position:absolute;
+top :50px;
+right :60px;
+
+}
+
+#fun>span:first-child{
+	background-color: green;
+	display: block;
+	
+
+}
+
+#fun>span:last-child{
+	border-top: 1px solid #e8e8e8;
+
+}
+
+#fun>span{
+	border-radius: 5px;
+	background: green;
+   box-shadow:5px 5px 5px black;
+   cursor:pointer;
+   display: none;
+   width: 100%;
+   height: 33.33%;
+   background-color:#aaccbb;
+   float: left;/*可以撑起来*/
+
+}
+
+#word{
+   box-shadow:5px -5px 5px black;
+   border: 5px solid green;
+   width: 400px;
+   height: 100px;
+   position: absolute;
+	left: 40px;
+	bottom:30px;
+	background-color: #fff;
+}
+ 
+ #word>div{
+
+	height: 30%;
+
+	width: 80%;
+
+	position: absolute;
+
+	left: 20px;
+
+	top: 15px;
+
+	border-bottom: 5px solid #fc1;
+
+}
+
+#word>div>span{
+
+	cursor:pointer;
+
+	text-align:center;
+
+	font-size: 20px;
+
+	display: block;
+
+	height: 100%;
+
+	width: 50px;
+
+	float:left;
+
+}
+.box{
+background-color: #fc1;
+
+
+}
+#word>span{
+
+	cursor: pointer;
+    position: absolute;
+	 top: 10px;
+     right: 10px;
+     display: block;
+     width: 20px;
+     height: 20px;
+}
+
+#word>input{
+
+
+	bottom: 10px;
+
+	position: absolute;
+
+	height: 20px;
+
+	width: 150px;
+}
+#word>input:nth-of-type(1){
+
+	left: 10px;
+
+}
+
+#word>input:nth-of-type(2){
+
+	left: 170px;
+
+	height: 25px;
+
+	width:40px;
+
+	cursor:pointer;
+
+}
+
+#word>input:nth-of-type(3){
+
+	left: 170px;
+
+	display: none;
+
+}
+
+#word>input:nth-of-type(4){
+
+	cursor: pointer;
+
+	display: none;
+
+	height: 25px;
+
+	width: 40px;
+
+	left: 330px;
+
+}
+
+ 
+
+.textColor{
+
+	color: yellow;
+
+}
+p>span{
+	background:#000;
+}
+</style>
+
+<script>
+	
+window.onload=function(){
+ 
+  var fun = document.getElementById("fun");
+
+var oFsp = fun.children;
+
+var oTc = document.getElementsByTagName("p")[0];
+
+var oWd = document.getElementById("word");
+
+var oInp = word.getElementsByTagName("input");
+
+
+//给展开添加点击事件
+ oFsp[0].onclick = function(){
+
+	var thisE = this;
+
+	var par =  thisE.parentNode.children;
+
+	if(thisE.innerHTML=='展开'){
+
+		par[0].innerHTML = "收起";
+
+		par[1].style.display = 'block';
+
+		par[2].style.display = 'block';
+
+	}else{
+
+		par[0].innerHTML = "展开";
+
+		par[1].style.display = 'none';
+
+		par[2].style.display = 'none';
+
+	}
+
+}
+  //给删除框添加事件
+ oWd.getElementsByTagName("span")[2].onclick = function(){
+
+	this.parentNode.style.display = 'none';
+
+}
+//给导航查找添加添加事件
+
+for(var i = 1;i<3;i++){
+
+	oFsp[i].index = i;
+
+	oFsp[i].onclick =wbk;
+
+}
+// 给查找替换添加事件
+var wds=oWd.getElementsByTagName('div')[0].getElementsByTagName('span')
+
+wds[0].onclick= wbk;
+wds[1].onclick= wbk;
+
+
+
+
+function wbk(){
+oWd.style.display='block';
+var wds=oWd.getElementsByTagName('div')[0].getElementsByTagName('span')
+
+if(this.innerHTML=='查找'){
+	 wds[0].className='box';
+	 wds[1].className='' ;
+     oInp[1].style.display='block';
+     oInp[2].style.display='none';
+     oInp[3].style.display='none';
+   
+     
+
+}else{
+
+     wds[0].className='';
+	 wds[1].className='box';
+     oInp[1].style.display='none';
+     oInp[2].style.display='block';
+     oInp[3].style.display='block';
+  }
+
+}   
+     
+    oInp[1].onclick=function(){
+  
+    var str=oInp[0].value
+    if(!str) return 
+
+    oTc.innerHTML=oTc.innerHTML.split(str).join('<span>'+str+'</span>')
+   
+  }
+
+  
+    oInp[3].onclick=function(){
+    
+    var str=oInp[0].value
+    var newstr=oInp[2].value
+    if(!str) return 
+    oTc.innerHTML=oTc.innerHTML.split(str).join('<span>'+newstr+'</span>')
+   
+  }
+
+function fns( str, keyword,newstr){
+if(keyword=='')
+	alert('请输入关键字')
+}
+if(str.indexOf(keyword)=-1){
+	alert('查找不到'+keyword)
+}
+return
+ oTc.innerHTML.split(str).join('<span>'+str+'</span>')
+
+
+  
+
+
+ 
+
+ }
+</script>
+</head>
+<body>
+	<div id="wrap">
+	<div id="textContent"><p>《半生缘》讲述了旧上海的几对年轻人的爱恨情仇.沈世钧本于顾曼桢相爱，可家里却催促他和表妹石翠芝结婚，曼桢的姐姐顾曼璐为维持一家生活开支辍学当交际花，最后在万般无奈之下与有妇有子的祝鸿才结婚。面对世钧家人，曼桢深感自卑，而世钧却误以为曼桢爱上了曾是曼璐男友的张豫瑾，而家中老父临危将家业托付给他，他只得回到南京，与曼桢两地相隔，而曼璐为了讨好祝鸿才，不惜牺牲妹妹的幸福，令她替祝鸿才产下一子，并阻止世钧寻找曼桢，曼桢终于逃离曼璐和鸿才的魔掌后再找世钧时，世钧已和翠芝结婚。不久之后，曼璐去世，曼桢为照顾儿子回到祝家，最后和祝鸿才结了婚。</p>
+	 </div>	
+    <div id="fun">
+    	<span>展开</span>
+       	<span>查找</span>
+        <span>替换</span>
+
+		</div >
+	  <div id="word" style="display: none">
+		<div>
+			<span  class='box'>查找</span>
+            <span>替换</span>
+        </div>
+        <span>X</span>
+            <input type="text">
+             <input type="button" value="查找">
+          
+          <input type="text">
+          <input type="button" value="替换">
+      </div>
+		</div>
+
+</body>
+</html>

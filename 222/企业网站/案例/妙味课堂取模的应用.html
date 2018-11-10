@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>取模的应用</title>
+	<style>
+	
+		
+		li{
+            margin-bottom: 3px;			
+			height: 40px;
+			list-style:none;
+		}
+
+
+	</style>
+	<script>
+		/*var i=0;
+		i++;
+		if(i===5){
+			i=0;//等于5时候返回
+		}//
+
+		if(){}===i%=5
+
+        //用取模来平铺颜色
+       
+window.onload=function(){
+	var aLi=document.getElementsByTagName('li')
+	var arr=['red','yellow','green','blue'];
+	for(var i=0;i<aLi.length;i++){
+		//给每个里编号，建立索引值。
+		aLi[i].index=i;
+		aLi[i].style.background=arr[i%arr.length]
+		aLi[i].onmouseover=function(){
+			this.style.background='gray';
+		}
+		aLi[i].onmouseout=function(){
+			this.style.background=arr[this.index%arr.length];//要返回原来就要返回数字；需要建立索引值；
+		}
+	}
+
+}
+//鼠标移出要恢复颜色的话还可以先把颜色存好
+//方法二
+window.onload=function(){
+	var aLi=document.getElementsByTagName('li')
+	var arr=['red','yellow','blue','green','black']
+    var str='';
+for(var i=0;i<aLi.length;i++){
+	aLi[i].style.background=arr[i%arr.length];
+	aLi[i].onmouseover=function(){
+        str=this.style.background;//先存颜色
+
+		this.style.background='gray';//this的使用
+	}
+     aLi[i].onmouseout=function(){
+	this.style.background=str;
+   
+
+}
+}
+}
+//反选应用
+window.onload=function(){
+var aInp=document.getElementsByTagName('li')
+aInp[0].onclick=function(){
+	for(var i=0;i<aInp.length;i++){
+		if(aInp[i].checked){
+			aInp[i].checked=false;
+		}
+		else{
+			aInp[i].checked=true;
+		}
+	}
+}
+}
+
+
+*/
+
+window.onload=function(){
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<ul id='ul1'>
+		<li><input type="button" value="反选"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+		<li><input type="checkbox"></li>
+
+	</ul>
+</body>
+</html>

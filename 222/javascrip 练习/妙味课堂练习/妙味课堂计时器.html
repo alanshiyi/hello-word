@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+<style>
+body{
+	background: #000;
+}
+*{
+	margin:0;
+	padding:0;
+}
+#div1{
+	width: 984px;
+	height: 171px;
+	margin:100px auto;
+	position: relative;
+	background:#fff;
+	overflow: hidden;
+
+}
+#div1 ul{
+ position:absolute;
+ left:0;
+ top:0;
+}
+
+#div1 ul li {
+	float:left;
+	width: 123px;
+	height: 171px;
+	list-style:none;
+}
+div{
+	width:123;
+	height:171;
+}
+</style>
+
+	<script>
+window.onload=function(){
+var oP= document.getElementById('time')
+var oImg=document.getElementsByTagName('img')
+
+
+ oImg.innerHTML += oImg.innerHTML;
+  oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+
+setInterval(function (){
+	if(oUl.offsetLeft<-oUl.offsetWidth/2)
+		{
+			oUl.style.left='0';
+		}
+		oUl.style.left=oUl.offsetLeft-2+'px';
+	}, 30);
+}
+
+
+
+setInterval(fnTime,1000)
+
+function fnTime(){
+
+var myTime = new Date()
+var  iHours=myTime.getHours();
+var  iMin=myTime.getMinutes();
+var  iSec=myTime.getSeconds();
+var  str=toTwo(iHours)+':'+toTwo(iMin)+':'+toTwo(iSec);
+
+
+for (var i = 0; i < str.length; i++) {
+
+    
+	oImg[i].src="img/"+str.charAt(i)+".JPG";
+}
+
+
+function toTwo(n){
+
+return n<10?'0'+n:''+n;
+
+}
+
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<p id="time" style="font-size: 60px;"></p>
+<div id="div1">
+<ul>
+<li><div><img src="img/0.JPG" ></div></li>
+<li><div><img src="img/0.JPG" ></div></li>
+<li><div><img src="img/colon.JPG"></div></li>
+<li><div><img src="img/0.JPG" ></div></li>
+<li><div><img src="img/0.JPG" ></div></li>
+<li><div><img src="img/colon.JPG"></div></li>
+<li><div><img src="img/0.JPG" ></div></li>
+<li><div><img src="img/0.JPG" ></div></li>
+</ul>
+</div>
+<body>
+	
+</body>
+</html>

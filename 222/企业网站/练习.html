@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style>
+	
+
+
+
+</style>
+
+
+<script>
+	
+
+/*var aLi=document.getElementsByTagName('li')
+
+//JS可以给任何HTML元素添加任意个 自定义属性
+for(var i=0;i<aLi.length;i++){
+aLi[i].onOff=true;
+aLi[i].onclick=function(){
+	if(this.onOff){
+this.style.background='images/ad.jpg'
+   this.onOff=false
+	}else{
+this.style.background='images/ad.jpg'
+this.onOff=true
+}
+}
+}
+ 
+
+
+
+var oBtn=document.getElementsByTagName('input')
+var oP=document.getElementsByTagName('p')
+var arr=['a','b','c']
+
+
+for(var i=0;i<oBtn.length;i++){
+	//oBtn[i].num=i;
+oBtn[i].index=i;//添加索引值 一般用来匹配关系
+oBtn[i].onclick=function(){
+	this.value=arr[this.index]
+	oP[this.index].innerHTML=arr[this.index]
+
+
+
+}
+
+
+}
+
+
+  s='a';
+function  a(){
+
+	 s='c';
+	document.write(s)
+	b='x';
+	document.write(b)
+}
+a();
+document.write(s)
+document.write(b)
+
+
+var scope='globle scope'
+function checkscope(){
+var scope='local scope'
+function nested(){
+	var scope='nested scope'
+	document.write(scope);
+
+}
+nested();
+
+}
+checkscope();
+
+
+
+function test(o){
+var i=0;
+if(typeof o=='object'){
+	var j=0;
+	for(var k=0;k<10;k++){
+		document.write(k);
+}
+document.write(k)
+}
+
+document.write(j)
+
+
+}
+
+
+function Box(){
+this.name=name ;
+this.age=age;
+this.run=function(){
+	return this.name+this.age+'运行中..'
+}
+
+
+
+}
+
+
+String.prototype.addstring=function(){
+
+	return this+', 被添加了。。'
+}
+var box='Lee'
+alert(box.addstring())
+
+
+
+
+
+
+
+
+
+var box = new Object()//创建对象
+box.name='chen' ;//添加属性
+box.age=100;
+box.run=function(){
+	return this.name+this.age +'正在运行中.....'
+	//this表示当前作用域
+}
+//this表示new object实例化出来的那个对象
+//this要放在一个作用域下，
+
+alert(box.run());
+alert(box.name)
+alert(box.age )
+var  name='jake'
+alert(this.name)
+
+
+var box = new Object()//创建对象
+box.name='chen' ;//添加属性
+box.age=100;
+box.run=function(){
+	return this.name+this.age +'正在运行中.....'
+var box2=new Object()
+box2.name ='jake '
+box2.age =200;
+box2.run=function(){
+	return this.name +this.age+"云翔中"
+}
+//、工厂模式
+function createObject(name,age){
+var obj =new Object()//原料
+obj.name=name ;
+obj.age=age ;
+obj.run=function(){
+	return this.name +this.age+'运行中...'
+}
+return obj;//出厂
+}
+var box=createObject('chen',2000)
+var box1=createObject('jing',89)
+alert(box.run())
+alert(box1.run())
+//
+
+
+var person=new Object()
+person.name='Nicholas'
+person.age='29'
+person.job='Software Enginer'
+person.sayName=function(){
+	alert(this.name)
+}
+alert(person.job)
+
+
+var person={
+  name:'Nicholas',
+  age :29,
+  job:'Software Enginer',
+
+sayName:function(){
+	alert(this.name);
+}
+
+}
+alert(person.name)
+
+
+function  run(name,age,job){
+
+var o=new Object();
+o.name=name ;
+o.age=age ;
+o.job=job;
+o.fell=function(){
+return this.name+this.age+this.job
+}
+return o;
+
+}
+var box=run('chen','1001','software engnier')
+alert(box.fell())
+
+
+//构造函数模式
+function Person(name,age,job){
+
+this.name =name ;
+this.age=age;
+this.job=job;
+this.sayName=function(){
+	return this.name+this.age+this.job
+}
+}
+var  box= new Person('CHEN ',290,'software')
+alert(box.sayName())
+//构造函数没有new Object (),但他会在后台自动创建
+//this相当于obj
+//构造函数不需要返回对象引用，他是后台自动返回的
+
+注意；
+//构造函数也是函数，函数名第一个字母要大写
+//必须new 构造函数名()，new box(),这个box 的第一个字母要大些、写
+
+
+function Person(name,age,job){
+this.name =name;
+this.age=age;
+this.job=job;
+this.sayName=function(){
+	return this.name+this.age+this.job
+}
+
+
+}
+var person1=new Person('chrn',6478,'fyu')
+
+var person2=new Person('bui',80,'gyer')
+
+//alert(person1.sayName())
+
+//alert(person1.constructor==Person)
+//alert(person2.constructor==Person)
+
+//alert(person1 instanceof Object)
+
+//alert(person1 instanceof Person)
+//alert(person2 instanceof Object)
+//alert(person2 instanceof Person)
+
+// 工厂模式
+function  createObject(name,age,job ){
+var box=new Object();
+box.name=name
+box.age=age
+box.job=job
+box.run=function(){
+	return this.name +this.age +this.job+'运行中。。。'
+}
+return box
+}
+var box1=createObject( 'dtywqv',100,'gds ')
+
+alert(box1.run())
+//工厂模式存在的问题 不能区分对象的类型
+
+function createperson(){
+var o=new Object();//创建对象（原料）
+o.name=name;//创建属性（加工）
+o.age=age;
+o.job= job;
+o.run=function(){
+alert(this.name )
+}
+return o;//返回值 （出厂）
+}
+var person1=createperson('alanshiyi',20,'cook')
+alert(person1.run())
+function  Box(){
+	Box.prototype.name='lee'
+	Box.prototype.age=100;
+	Box.prototype.run=function(){
+		return this.name+this.age+'运行中....'
+	}
+}
+var box1=new Box();
+//alert(box.prototype);			//使用对象实例无法访问到prototype
+//alert(box.__proto__);			//使用对象实例访问prototype的指针
+alert(Box.prototype);			//使用构造函数名(对象名)访问prototype
+
+function isproperty(object,property){
+return !objct.hasOwnProperty(property)&&(property in object )
+}
+var box =new Box()
+alert(isproperty(box.'name'))
+
+
+
+function Box(){}
+	Box.prototype={
+		constructor
+	}
+
+
+
+
+function foo()
+{
+	 var a=b=1;
+}
+foo()
+alert(a)//undefind
+alert( b)//munber
+
+try{
+	try{
+		throw new Error('oops')
+
+	}
+	catch(ex){
+		alert('inner',ex.message)
+		throw ex;
+	}
+	finally{
+		alert('finally')
+	}
+
+}
+catch(ex){
+alert('auter',ex.message)
+}
+
+
+with({x:1}){
+	alert(x)
+}
+
+with(document.form[0]){
+	alert(name.value)
+}
+
+function z(){
+	'use strict'
+	x=1;
+	alert(window.x)
+}
+z()
+
+
+function z(a){
+	'use strict'
+	arguments[0].x=1200;
+	alert(a.x)
+}z({x:1})
+
+
+
+function z(a){
+	alert(delete a)
+}
+z(3)
+
+
+var obj ={}
+obj[1]=1;
+alert(obj)
+obj['1']
+alert(obj)
+
+var person={age:28,tile:'fe'}
+//alert(delete person.age)//ture 表示已经删除;
+delete person.age;
+//alert(person.age)
+delete person.title
+//alert(person.title)
+alert(delete person.age)
+alert(delete Object.prototype)//访问不到的;
+var descriptor=Object.getOwnPropertyDscriptor(Object,)
+
+
+
+var x=1;
+delete x;
+alert(x)  //不能删除
+
+	function foo(){
+
+		delete foo
+
+	}
+alert(foo())
+
+
+
+
+var cat=new Object()
+cat.legs=4;
+cat.name='kitty'
+alert('legs'in cat);
+alert('abi'in cat)
+alert('toString'in cat)
+
+cat.hasOwnProperty('legs')
+
+
+
+function  person(){}//构造函数
+var p1=new Person() //p1 实例对象
+alert(p1.__proto__===Person.prototype)
+
+
+
+
+//函数对象  
+function F1(){};  
+var F2 = function(){};  
+var F3 = function("n1","n2","return n1+n2");  
+  
+console.log(typeof F1);  //function  
+console.log(typeof F2);  //function  
+console.log(typeof F3);   //function  
+console.log(typeof Object);   //function  
+console.log(typeof Array);   //function  
+console.log(typeof String);   //function  
+console.log(typeof Date);   //function  
+console.log(typeof Function);   //function  
+function Dog(){};  
+Dog.prototype.name = "小黄";  
+Dog.prototype.age =  13;  
+Dog.prototype.getAge = function(){  
+    return this.age;  
+}   
+var dog1 = new Dog();  
+var dog2 = new Dog();   
+dog2.name = "小黑";  
+console.log(dog1.name); // 小黄 来自原型  
+console.log(dog2.name); // 小黑 来自实例  
+
+function Box(){
+this.name='lee'//被继承的函数叫做超类型
+}
+Box.prototype.name='jake'
+function Desk(){
+	this.age=100;
+
+}
+Desk.prototype=new  Box();
+var desk=new Box();
+alert(desk.name);
+
+function Person(){
+    var private_name = '小明';
+    var private_age = 10;    
+　this.privilege_name = '小红'; 
+　this.privilege_age = 9; 
+ 
+    //定义一个特权方法
+　this.showPrivilegeName = function(){
+　　　　alert(private_name);          
+
+}
+
+}
+var obj= {x1:1,x2:2}
+var i=1,n=2;
+for(;i<=n;i++){
+	console.log(obj['x'+i]);
+}//输出：1，2 
+
+
+var  man = {
+
+name:'chen',
+weibo:'alan',
+get age(){
+	return new Date().getFullYear()-1995
+}
+set age(val){
+	alert('fdhsiklk'+val)
+}
+}
+alert(man.age)//27;
+
+
+
+w
+
+//时间  年月日
+
+window.onload=function()
+{
+	showTime()
+ function checkTime(i){
+  if (i<10) {
+    i='0'+i
+
+  }return i;
+}
+
+
+function showTime(){
+	
+var now=new Date()
+var year=now.getFullYear();
+var month=now.getMonth()+1;
+var day=now.getDate();
+var h=now.getHours();
+var m=now.getMinutes();
+var s=now.getSeconds();
+m=checkTime(m)
+s=checkTime(s)
+d=now.getDay()
+var weekday=['日','一','二','三','四','五','六']
+
+
+
+
+//document.getElementById('show').innerHTML=''year+'年'+month+'月'+'day'+'日'+'星期'+weekday[d]
+//+'星期'+h+'时'+m+'分'+s+'秒'
+
+document.getElementById("show").innerHTML=""+year+"年"+month+"月"+day+"日 "+ '星期'+weekday[d]+h+":"+m+":"+s;
+
+}
+setTimeout('showTime()',500)
+}
+
+
+
+
+
+window.onload = function(){
+    showTime();
+  }
+  function checkTime(i){  //补位处理
+      if(i<10){
+      	i='0'+i;
+      }
+       return i}
+  function showTime(){
+    var now=new Date();
+    var year= now.getFullYear()  ;
+    var month= now.getMonth()+1;
+    var day= now.getDate();
+    var h= now.getHours() ;
+    var m= now.getMinutes();
+    var s= now.getSeconds();
+    m=checkTime(m)
+    s=checkTime(s)
+    
+    d=now.getDay()
+    var weekday=new Array(7)
+    weekday[0]="星期日"
+    weekday[1]="星期一"
+    weekday[2]="星期二"
+    weekday[3]="星期三"
+    weekday[4]="星期四"
+    weekday[5]="星期五"
+    weekday[6]="星期六"
+
+    document.getElementById("show").innerHTML=""+year+"年"+month+"月"+day+"日 "+ weekday[d]+h+":"+m+":"+s;
+    t=setTimeout('showTime()',500)
+  }
+
+
+
+window.onload=function(){
+	showTime();
+}
+function checkTime(i){
+if (i<10) {
+	i='0'+i;
+
+}
+return i;
+
+}
+
+
+
+function showTime(){
+var  now = new Date();
+var year=now.getFullYear();
+var  month=now.getMonth();
+var day = now.getDate();
+var h= now.getHours();
+var m=now.getMinutes();
+var s=now.getSeconds();
+m=checkTime(m)
+s=checkTime(s)
+ d=now.getDay();
+
+var weekday=['日','一','二','三','四','五','六']
+
+document.getElementById('show').innerHTML=''+year+'年'+month+'月'+day+'日'+h+':'+m+':'+s
+
+setTimeout('showTime()',500)
+}
+
+
+
+
+
+window.onload=function(){
+showTimer();
+
+}
+function checkTime(i){
+	if(i<10){
+		i='0'+i;
+	}
+	return i;
+}
+
+
+function showTimer(){
+var now=new Date();
+var year=now.getFullYear();
+var month=now.getMonth()
+var day=now.getDate();
+var h=now.getHours();
+var m=now.getMinutes();
+var s=now.getSeconds();
+m=checkTime(m)
+s=checkTime(s);
+d=now.getDay();
+
+var weeekday=['日','一','二','三','四','五','六']
+document.getElementById("show").innerHTML=''+year+'年'+month+'月'+day+'日'+h+':'+m+':'+s
+setTimeout('showTimer()',500)
+}
+
+//倒计时
+window.onload=function(){
+var curtime=new Date()
+var endtime=new Date('2018,10,20')
+var lefttime=Math.ceil((endtime.getTime()-curtime.getTime())/(24*60*60*1000))
+document.getElementById('show').innerHTML=lefttime
+}
+
+window.onload=function(){
+	var now=new Date()
+	var end=new Date('2019,1,1')
+	var lef=Math.ceil((end.getTime()-now.getTime())/(24*60*60*1000));
+	document.getElementById('show').innerHTML=lef
+
+}
+
+window.onload=function(){
+showTime()
+}
+function showTime(){
+	var now=new Date();
+var end=new Date("2018/10/7,10:52:12")
+var leftTime=parseInt((end.getTime()-now.getTime())/1000);
+var d=parseInt(leftTime/(24*60*60));
+var h=parseInt(leftTime/(60*60)%24);
+var m=parseInt(leftTime/60%60);
+var s=parseInt(leftTime%60)
+document.getElementById('show').innerHTML=''+d+"天"+h+'时'+m+'分'+s+'秒'
+
+if(leftTime<0){
+	document.getElementById('show').innerHTML='团购结束'
+}
+setTimeout(showTime,500)
+}
+
+
+window.onload=function(){
+	showTime()}
+function showTime(){
+	var now=new Date();
+	var end=new Date('2018/10/6,11:06:00')
+	var lefttime=parseInt((end.getTime()-now.getTime())/1000)
+    var d=parseInt(lefttime/(60*60*24))
+    var h=parseInt(lefttime/(60*60)%24)
+     var m=parseInt(lefttime/60%60)
+     var s=parseInt(lefttime%60)
+     document.getElementById('show').innerHTML=''+d+'天'+h+'时'+m+'分'+s+'秒'
+     if(lefttime<0){
+     	document.getElementById('show').innerHTML='团购结束'
+     }
+     setTimeout(showTime,500)
+    }
+
+
+function Box(){
+	this.name='lee';
+}
+function Desk(){
+	this.age=100;
+
+}
+
+ Desk.prototype= new Box()//子类型要继承父类型
+var desk =new Desk()
+
+alert(desk.name)//undefine 解决办法通过原型链
+
+
+function Box(){
+this.name=name;
+this.age=age;
+}
+function Desk(){
+Box.call(this,name,age)//对象冒充继承
+
+}
+
+var desk=new Desk('ee',100)
+alert(desk.name)	
+
+
+
+setInterval(function () {
+    if ($('.username').html() != undefined && $('.username').html() != '') {
+        if ($('#btn_refresh').attr('class') == 'start') {
+            $('#btn_refresh').click();
+        }
+    }
+    else {
+        if (!$('.randcode-select').is(":visible")) {
+            $('.randcode-start').click();
+            setTimeout(function () {
+                if ($('.error_tips_randcode').html().toString().indexOf('自动识别验') > 0 || $('.error_tips_randcode').html().toString().indexOf('您')) {
+                    //点击登录按钮
+                    $('.submit').click();
+                }
+            }, 1800)
+ 
+        }
+        else {
+            $('.randcode-start').click();
+    }
+}, 5000)
+
+window.onload=function(){
+
+show()
+
+
+}
+
+function show(){
+
+	var now=new Date()
+	var year=now.getFullYear()
+    var day=now.getDate()
+    var month=now.getMonth()
+    var h=now.getHours()
+    var m=now.getMonth()
+    var s=now.getSeconds()
+    var d=now.getDay()
+    weekday=['日','一','二','三','四','五','六']
+document.getElementById('show').innerHTML=''+year+'年'+month+'月'+day+'日'+'星期'+weekday[d]+h+'时'+m+'分'+s+'秒'
+
+setTimeout('show()',500)
+
+}
+
+
+
+
+//工厂模式
+function createPerson(name,age ,job ){
+var o=new Object();
+o.name=name ;
+o.age=age;
+o.job=job;
+o.sayName=function(){
+alert(o.name)
+
+}
+
+return o;
+
+
+}
+
+var person1=createPerson('lancer',23,'ul')
+alert(person1.sayName())
+
+function createPerson(name,age,job){
+var  o=new Object();
+o.name =name;
+o.age=age;
+o.job=job;
+o.sayName=function(){
+alert(this.name)
+
+
+}
+return o;
+
+}
+
+var person1=createPerson('name',23,'UI')
+alert(person1.)
+alert(person1.name)
+
+
+	function createPerson(name,age,job ){
+    var o=new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName=function(){
+    return name+age+job
+}
+return o
+}
+
+var person1=createPerson('chen',23,'web')
+
+alert(person1.sayName())
+
+//构造函数
+function  Person(name,age,job){
+	this.name=name ;
+	this.age=age;
+	this.job=job;
+	this.sayName=function(){
+		return this.name+this.age+this.job/记住要加this
+	}
+}
+var  person1=new Person('chen',24,'web')
+var person2=new Person('alan',23,'ul')
+//alert(person1.constructor==Person);
+//alert(person1.constructor==Person)
+
+alert(person1 instanceof Object)
+alert(person2 instanceof Object)
+alert(person1 instanceof Person)
+alert(person2 instanceof Person)
+
+
+
+
+function  Person(){
+    Person.prototype.name='chen';
+	Person.prototype.age=23;
+	Person.prototype.job='ul';
+	Person.prototype.sayName=function(){
+		return this.age
+	
+}
+}
+var person1=new Person();
+alert(person1.sayName());
+var person2=new Person();
+person1.name='alan';
+alert(person1.name);
+
+
+window.onload=function(){
+	showTime()
+
+}
+function checkTime(i){
+	if(i<10){
+		i='0'+i;
+	}
+	return i;
+}
+
+
+
+function showTime(){
+
+var now=new Date()
+var year=now.getFullYear()
+var month=now.getMonth()+1;
+var day=now.getDate();
+var h=now.getHours();
+var m=now.getMinutes()
+var s=now.getSeconds()
+var d=now.getDay()
+m=checkTime(m)
+s=checkTime(s)
+var  weekday=['日','一','二','三','四','五','六']
+document.getElementById('show').innerHTML=''+year+'年'+month+'月'+day +'日'+'星期'+weekday(d)+h+':'+m+':'+s
+setTimeout(showTime(),500)
+}
+
+//工厂模式
+
+
+function  createPerson(name,age,job){
+  var o=new Object()
+      o.name=name;
+      o.age=age;
+      o.job=job;
+      o.sayName=function(){
+      return o.name+o.age+o.job;
+
+
+      }
+return o;
+
+
+}
+
+var person1=createPerson('CHEN',23,'WEb')
+var person2=createPerson('alan',19,'js')
+alert(person1.name)
+alert(person1.age)
+alert(person1.job)
+alert(person1.sayName())
+
+
+alert(person1==person2)
+//gongc模式没有解决对象识别的问题
+
+
+//构造函数
+function Person( name,age,job){
+ this.name=name ;
+ this.age=age ;
+ this.job=job;
+ this.sayName()=function(){
+ return this.name+this.age+this.job
+}
+}
+
+
+function  foo(){
+  var y='Bob'
+  var x='Hello'+y;
+  alert(x);
+
+}
+foo()
+
+//变量提升
+function foo(){
+	var y;
+	var x='Hello'+y;
+	alert(x);
+	y='chen'
+
+}
+foo()
+
+//y 没有报错是因为y在后面声明了，js引擎但不会在将变量的赋
+
+
+function (){
+
+var
+x=1;
+y=x+1;
+z,1;
+for(i=0;i<100;i++){
+
+}
+
+var course='learn Js '
+alert(course)
+alert(window.course)
+
+window.onload=function(){
+	showTime()
+}
+function showTime(){
+var now=new Date();
+var year=now.getFullYear();
+var day=getDate();
+var month=getMonth();
+var h=getHours();
+var m=getMinutes();
+var s=getSeconds();
+d=now.getDay();
+document.getElementById('show').innnerHtml=''+year+'年'+month+'月'+day+'日'+'星期'+weekday[d]+h+':'+m+':'+s
+setTimeout(showTime,500)
+
+}
+
+function  checkTime(i){
+i='0'+i;
+}
+return i;
+
+var man={
+
+	name:'chen';
+	weibo:'@Belive'
+	get age(){
+		return new Date().getFullYear()-1988;
+
+	}
+	set age(val){
+		alert('Age can\'t be set to '+val )
+	}
+
+}
+
+
+
+  function outer(a) {
+    return function inner(b) {
+      // 这个内部函数在使用变量a,
+      // a是在outer函数里面定义的
+      // 当inner函数被调用的时候, outer函数已经被返回了,但是inner还是可以访问a
+      // 我们把这个inner叫做闭包
+      return a + b;
+    }
+
+  }
+  alert(outer(5)(5)); //10
+  var storeOuter = outer(5)
+  alert(storeOuter(10)); //15
+
+
+var girl={
+	name:'小妹'
+}
+var boy={
+	name:"小帅"
+	pay:function(){
+		alert('花了一千')
+	}
+}
+Object.setprototypeOf(girl,boy)
+alert(girl.pay)
+
+var girl = {
+    name: '小美'
+};
+var boy = {
+    name: '小帅',
+    pay: function() {
+        return ('花了一千元');
+    }
+};
+Object.setPrototypeOf(girl, boy);
+alert(girl.pay());//girl 继承了boy 的属性girl的原型是boy
+
+
+var girl={
+	name:"小妹"
+	pay:function(){
+		boy.pay();
+
+	}
+}
+var boy={
+	name:'xiaoshuia ';
+	pay:function(){
+		return "huale"
+	}
+}
+
+ail
+var a = {
+    fn1: function() {
+        console.log(1);
+    }
+};
+var b = {
+    fn2: function() {
+        console.log(2);
+    }
+};
+var c = {
+    fn3: function() {
+        console.log(3);
+    }
+};
+var d = {
+    fn4: function() {
+        console.log(4);
+    }
+};
+Object.setPrototypeOf(d, c);
+Object.setPrototypeOf(c, b);
+Object.setPrototypeOf(b, a);
+alert(d.fn1());
+alert(d.fn2());
+alert(d.fn3());
+alert(d.fn4());
+  A是b的原型 b是c的原型 c是d的原型
+var laoyao= {
+	name:'laoyao',
+	sayName:function(){
+		alert(this.name)
+	}
+}
+var fenshen={}
+	Object.setPrototypeOf(fenshen,laoyao)
+//alert(fenshen.name)
+alert(fenshen.sayName())
+
+var a = {
+    sayName: function() {
+        return (this.name);
+    }
+};
+var laoyao = {
+    name: 'laoyao'
+};
+Object.setPrototypeOf(laoyao, a);
+alert(laoyao.sayName());
+var createPerson=function(){
+var o={};
+o.name=name;
+var proto={
+	sayName:function(){
+		alert(this.name)
+	}
+}
+
+
+
+}
+
+
+
+
+function Foo(){
+	this.value=42;
+}
+Foo.prototype={function(){}
+}
+function Bar (){}
+Bar.prototype=new Foo()
+Bar.prototype.foo='Hello Word'
+alert(Bar.prototype.constructor)
+var test=new Bar ()
+alert(test.value)
+
+function Foo(a,b,c){
+var bar={}
+foo.apply(bar,[1,2,3])//数组将会被扩展
+foo.call(bar,1,2,3)//传递到佛哦的参数是a=1 b=2 c=3 
+}
+
+//工厂模式
+function  foo( name,age,job){
+
+var o=new Object()
+o.name=name ;
+o.age=age ;
+o.job=job;
+o.sayName=function(){
+	return name+age +job
+}
+return o
+}
+var person1=new foo('shiyi','23','267')
+alert(person1.name)
+
+//构造函数模式
+function Foo(name,age,job ){
+
+this.name=name ;
+this.age=age;
+this.job=job;
+this.sayName=function(){
+	return this.name+this.age +this.job
+}
+}
+var person1=new Foo('alan',23,'gcdis')
+
+
+alert(person1.sayName())
+
+
+//圆形模式
+function Foo(){}
+Foo.prototype.name='alan';
+Foo.prototype.age=23;
+Foo.prototype.job='UI'
+Foo.prototype.sayName=function(){
+	return this.name+this.age+this.job
+}
+var f1=new Foo()
+alert(f1.sayName())
+var f2=new 	Foo()
+alert(f2.sayName())
+alert(f1.sayName==f2.sayName)//地址共享
+
+
+//简单原型模型
+function Foo(){
+}
+Foo.prototype={
+	name:'alan',
+	age:'23',
+	job:"web",
+	sayName:function(){
+		return this.name +this.age+this.job
+	}
+}
+
+var  person1= new Foo()
+alert(person1.sayName())
+
+
+//原型模式
+function Foo(){
+
+}
+
+Foo.prototype.name='alan';
+Foo.prototype.age=23;
+Foo.prototype.job='UI';
+Foo.prototype.sayName=function(){
+	return this.name +this.age +this.job
+
+}
+var f1=new Foo()
+var f2=new Foo()
+alert(f1.sayName()) 
+alert(f2.job)
+window.onload=function(){
+	showTime();
+}
+function checkTime(i){
+
+if(i<10){
+	i="0"+i;
+
+}
+return i;
+
+
+}
+
+function showTime(){
+var now=new Date()
+var year=now.getFullYear()
+var day=now.getDate()
+var month=now.getMonth()
+var h=now.getHours()
+var m=now.getMinutes()
+var s=now.getSeconds()
+m=checkTime(m);
+s=checkTime(s);
+d=now.getDay();
+var weekday=['日','一','二','三','四','五','六']
+document.getElementById('show').innerHTML=''+year+'年'+month+'月'+day+'日'+weekday[d]+h+':'m +':'+s;
+setTimeout(showTime(),500)
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+<div id='show'></div>
+</body>
+</html>

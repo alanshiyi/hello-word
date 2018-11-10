@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>模拟手机发送</title>
+	<style>
+		*{margin:0; padding:0;}
+		body,ul,li,a{list-style:none; text-decoration:none;}
+		.content{width:300px; height:500px; background:#B5B5B5; margin:50px auto 0; overflow: hidden;}
+		.title{font-size:20px; font-weight:bold; color: black; text-align:center; line-height:40px;}
+		.content-bg{background:white; width:260px; height:420px; margin:20px auto 0;}
+		.content-box{height:370px; padding:10px; overflow: auto;}
+		.send-box{border-top:solid 1px #666; background:#999; height:40px; padding:5px;}
+		.send-box span{width:40px; height:40px; line-height:40px; font-size:14px; text-align:center; float: left; background:white; cursor:pointer; margin-right:5px;}
+		#text{width:120px; height:30px; line-height:30px; padding:0 10px; margin-top:3px;}
+		#send-btn{font-size:20px; color:#000;}
+		.box p{ color:white; padding:5px; width:160px; word-wrap: break-word;}
+		#box1{margin-top:5px;float:right;}
+		#box1 span{float:right; margin-left:5px;}
+		#box1 p{float:right; background:green;}
+		#box2{margin-top:5px; float:left;}
+		#box2 span{float:left; margin-right:5px;}
+		#box2 p{float:left; background:red; }
+	</style>
+	<script>
+		window.onload = function(){
+			var oName = document.getElementById("name");
+			var oText = document.getElementById("text");
+			var oSendBtn = document.getElementById("send-btn");
+			var oContentBox = document.getElementById("content-box");
+			oName.onclick = function(){
+				if(oName.innerHTML == "小强"){
+					oName.innerHTML = "小明";
+				}else{
+					oName.innerHTML = "小强";
+				}
+			}
+			function fnValue(){
+
+				if(oName.innerHTML == "小强"){
+					oContentBox.innerHTML = '<div id="box1" class="box"><span>' + oName.innerHTML + '</span><p>' + oText.value + '</p></div>' + oContentBox.innerHTML;
+					oText.value = '';
+				}else{
+					oContentBox.innerHTML = '<div id="box2" class="box"><span>' + oName.innerHTML + '</span><p>' + oText.value + '</p></div>' + oContentBox.innerHTML;
+					oText.value = '';
+				}
+			}
+			oSendBtn.onclick = function(){
+				if(oText.value == ""){
+					alert("您输入的不能为空");
+					return false;
+				}
+				fnValue();
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<div class="content">
+		<p class="title">iphone 6s plus</p>
+		<div class="content-bg">
+			<div id="content-box" class="content-box">
+				<!-- <div id="box1" class="box">
+					<span>小强</span>
+					<p>你好撒等会开会大声疾呼</p>
+				</div>
+				<div id="box2" class="box">
+					<span>小强</span>
+					<p>你好撒等会开会大声疾呼</p>
+				</div> -->
+			</div>
+			<div class="send-box">
+				<span id="name">小强</span>
+				<input id="text" type="text" value="" />
+				<a id="send-btn" href="javascript:;">发送</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+
+		*{
+
+	margin: 0;
+
+}
+
+#exhibition{
+
+	width: 600px;
+
+	height: 400px;
+
+	left:50%;
+
+	top:50%;
+
+	margin-left:-300px;
+
+	margin-top: -200px;
+
+	position: absolute;
+
+	background-color: #DCDCDC;
+
+}
+
+#textContent{
+
+	box-shadow: 0 0 15px black;
+
+	border-radius: 10px;
+
+	padding: 10px;
+
+	width: 400px;
+
+	height: 200px;
+
+	background-color: #BFEFFF;
+
+	position: absolute;
+
+	left: 20px;
+
+	top: 20px;
+
+}
+
+#fun{
+
+	text-align:center;
+
+	width: 50px;
+
+	height: 80px;
+
+	position: absolute;
+
+	right: 100px;
+
+	top: 50px;
+
+}
+
+
+#fun>span:first-child{
+
+	background-color: #aabbcc;
+
+	display: block;
+}
+
+#fun>span:last-child{
+
+	border-top: 1px solid black;
+
+}
+
+#fun>span{
+
+	box-shadow:5px 5px 5px black;
+
+	cursor:pointer;
+
+	display: none;
+
+	width: 100%;
+
+	height: 33.33%;
+
+	background-color:#aaccbb;
+
+	float: left;
+
+}
+
+ 
+
+#word{
+
+	box-shadow:5px -5px 5px black;
+
+	border: 5px solid grey;
+
+	width: 400px;
+
+	height: 100px;
+
+	left: 20px;
+
+	bottom:20px;
+
+	position: absolute;
+
+	background-color: 	#FFE1FF;
+
+}
+
+#word>div{
+
+	height: 30%;
+
+	width: 80%;
+
+	position: absolute;
+
+	left: 20px;
+
+	top: 15px;
+
+	border-bottom: 5px solid #FF83FA;
+
+}
+
+#word>div>span{
+
+	cursor:pointer;
+
+	text-align:center;
+
+	font-size: 20px;
+
+	display: block;
+
+	height: 100%;
+
+	width: 50px;
+
+	float:left;
+
+}
+
+.checkedS{
+
+		background-color: #FF83FA;
+
+}
+
+#word>span{
+    
+	cursor: pointer;
+    position: absolute;
+	top: 10px;
+
+	right: 10px;
+
+	display: block;
+
+	width: 20px;
+
+	height: 20px;
+
+	
+
+}
+
+#word>input{
+
+	bottom: 10px;
+
+	position: absolute;
+
+	height: 20px;
+
+	width: 150px;
+
+}
+
+#word>input:nth-of-type(1){
+
+	left: 10px;
+
+
+}
+
+#word>input:nth-of-type(2){
+
+	left: 170px;
+
+	height: 25px;
+
+	width:40px;
+
+	cursor:pointer;
+
+}
+
+#word>input:nth-of-type(3){
+
+	left: 170px;
+
+	display: none;
+
+}
+
+#word>input:nth-of-type(4){
+
+	cursor: pointer;
+
+	display: none;
+
+	height: 25px;
+
+	width: 40px;
+
+	left: 330px;
+
+}
+
+ 
+
+.textColor{
+
+	color: yellow;
+
+}
+
+ 
+
+	</style>
+
+</head>
+
+<body>
+
+	<div id="exhibition">
+
+		<div id="textContent">中信刚刚收了麦当劳，我问中信的领导怎么样，他们说，要立马变，一个是送货方式要变；一个是菜品要变，注重健康。新时代新变化每次都让企业家们受到鼓舞。五年来，国家更加重视民营企业，（政协小组讨论）现场，民营企业家大量增加，相应的国企领导就减少了，很多民营企业的市值和公司规模都超过了国有企业。</div>
+
+		<div id="fun">
+
+			<span>展开</span>
+
+			<span>查找</span>
+
+			<span>替换</span>
+
+		</div>
+
+		<div id="word" style="display:none;">
+
+			<div>
+
+				<span class="checkedS">查找</span>
+
+				<span>替换</span>
+
+			</div>
+
+			<span>x</span>
+
+			<input type="text" />
+
+			<input type="button" value="查找"/ >
+
+			<input type="text" />
+
+			<input type="button" value="替换" />
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" >
+
+		
+
+ 
+
+var fun = document.getElementById("fun");
+
+var funSpan = fun.children;
+
+var textContent = document.getElementById("textContent");
+
+var word = document.getElementById("word");
+
+var wordInput = word.getElementsByTagName("input");
+
+var originalStr = textContent.innerHTML;
+
+//给展开添加事件
+
+funSpan[0].onclick = function(){
+
+	var thisE = this;
+
+	var par =  thisE.parentNode.children;
+
+	if(thisE.innerHTML=='展开'){
+
+		par[0].innerHTML = "收起";
+
+		par[1].style.display = 'block';
+
+		par[2].style.display = 'block';
+
+	}else{
+
+		par[0].innerHTML = "展开";
+
+		par[1].style.display = 'none';
+
+		par[2].style.display = 'none';
+
+	}
+
+}
+
+ 
+
+ 
+
+ 
+
+//给查找和替换添加功能
+
+for(var i = 1;i<3;i++){
+
+	funSpan[i].index = i;
+
+	funSpan[i].onclick =wordSR;
+
+}
+
+ 
+
+//给关闭word添加功能
+
+ 
+
+word.getElementsByTagName("span")[2].onclick = function(){
+
+	this.parentNode.style.display = 'none';
+
+}
+
+ 
+
+//给word的span中的查找替换添加功能
+
+var wordDivSpan = word.getElementsByTagName("div")[0].getElementsByTagName("span");
+
+wordDivSpan[0].onclick = wordSR;
+
+wordDivSpan[1].onclick = wordSR;
+
+ 
+
+//查找字符串,给按钮添加事件
+
+ 
+
+wordInput[1].onclick = function(){
+
+	var str = originalStr
+
+	var keyword = wordInput[0].value;
+
+    var newword = wordInput[2].value;
+
+	textContent.innerHTML = SandR(str,keyword,newword);
+
+	wordInput[0].value = '';
+
+	wordInput[2].value='';
+
+}
+
+wordInput[3].onclick = function(){
+
+	var str = originalStr;
+
+	var keyword = wordInput[0].value;
+
+    var newword = wordInput[2].value;
+
+	originalStr = textContent.innerHTML = SandR(str,keyword,newword);
+
+	wordInput[0].value = '';
+
+	wordInput[2].value='';
+
+}
+
+ 
+
+ function wordSR(){
+
+ 		var word = document.getElementById("word");
+
+		word.style.display = 'block';
+
+		var wordInput = word.getElementsByTagName("input");
+
+		var wordDivSpan = word.getElementsByTagName("div")[0].getElementsByTagName("span");
+
+		if(this.innerHTML=='查找'){
+
+			wordDivSpan[0].className = "checkedS";
+
+			wordDivSpan[1].className = "";
+
+			wordInput[1].style.display = 'block';
+
+			wordInput[2].style.display = 'none';
+
+			wordInput[3].style.display = 'none';
+
+		}else{
+
+			wordInput[1] = 'none';
+
+			wordInput[2].style.display = 'block';
+
+			wordInput[3].style.display = 'block';
+
+			wordDivSpan[0].className = '';
+
+			wordDivSpan[1].className = 'checkedS';
+
+		}
+
+	}
+
+/*
+
+	function SandR(str,keyword,newword)
+
+	查找和替换函数 str：被查找/替换文本，keyword:查找关键词，newword:替换词,
+
+	返回值：修改后的字符串
+
+*/
+
+function SandR(str,keyword,newword){
+
+	if(keyword==''){
+
+		alert("请输入要查到的词");
+
+		return str;
+
+	}
+
+	if(str.indexOf(keyword)==-1){
+
+		alert("查找不到:"+keyword);
+
+		return str;
+
+	}
+
+	var index = str.indexOf(keyword);
+
+	var newStr = '';
+
+	var len = keyword.length;
+
+	var word = newword==''?'<span class="textColor">'+keyword
+
+			+'</span>':newword;
+
+ 
+
+	while(index!=-1){
+
+		newStr = newStr + str.substring(0,index)+ word;
+
+		str = str.substring(index+len);
+
+		index = str.indexOf(keyword);
+
+	}
+
+	newStr += str;
+
+	return newStr;
+
+ 
+
+	//第二种方法 replace
+
+	// var word = newword== '' '?'<span class="textColor">'+keyword
+
+	// 		+'<span>':newword;
+
+	// return str.replace(keyword,word);
+
+}
+
+ 
+
+	</script>
+
+</body>
+
+</html>

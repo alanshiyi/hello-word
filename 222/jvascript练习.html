@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+       
+<script>
+	//var box=null;
+	//alert(typeof box);
+	/*var boxString= '李炎恢';
+	  boxString=100; 
+	 alert(boxString);
+	 function test(){
+	 message='hi';
+}
+	 test();
+    alert(message);
+	 
+	 age=29;
+	 var message='hi',
+	     found=false,
+	     height=189;
+	     alert(message)
+     var box=100;
+     height=box++;
+     alert(height);
+     var box={
+     	toString:function(){
+     		return 1;}
+     }
+     box++;
+    alert(box);
+    var  box={
+    	toString:function(){
+    		return 1;
+
+    	}
+    };
+         +box;
+      alert(+box);
+      var box=100+'100';
+      alert(box);*/
+      //函数
+     /*function box(){  //函数的声明
+    
+    	alert('我只有被调用才可以执行！')  // 函数本身没有运行功能
+     }
+     box();//调用
+     function box(name,age){
+     	alert('你的明治是:+'name',+年龄:+'age'')
+     }
+     box(陈春利,20);
+     function box(name,age){
+      alert('你的姓名：'+name+'，年龄：'+age); 
+  } 
+      box('李炎恢',28); 
+      function box(name,age){
+      	alert('你的姓名是:'+name+',年龄是'+age);
+      }box('陈春利',23);
+      function box(){       
+
+	return ('我只有被调用才可以执行！');     }
+      //打印出函数调用返回过来的结果
+      alert(box());    //调用，相当于box()='我只有被调用才可以执行！'；
+     function box(num1,num2){
+     	return num1*num2 ;
+
+     }
+     var num=box(10,5);
+     alert(num);
+
+function box(num){
+	if (num<5) return num;
+	return 100;
+
+}
+alert(box(2));
+
+
+function box(){
+	return arguments.lenght;
+}
+alert(box(1,2,3,4,5,6));
+function box() {
+if(arguments.length==0)return sum;
+for(var i=0;i<arguments.length;i++);{
+	sum=sum+arguments[i];
+}
+
+return sum;
+
+}
+alert(box(1,2,3));
+
+function box() { 
+var sum= 0; 
+if(arguments.length ==0)returnsum; //如果没有参数，退出 
+for(var i=0;i<arguments.length;i++){ //如果有，就累加 
+sum=sum+arguments[i]; 
+} 
+return sum; //返回累加结果 
+} 
+alert(box(5,9,12));
+
+function box(num){
+	return num+100;
+
+}
+function box(num){
+	return num+200;
+
+}
+alert(box(50));
+
+function box(){
+	return arguments.length;
+}
+alert(box(1,2,3,4))
+
+var box=new Object();
+box.name='alanshiyi';
+box.age=23;//使用new 创建Object;
+var box={
+	name:'alanshiyi';
+	age:23;
+
+}
+
+alert(box.age);
+
+var box={ 
+run:function(){ //对象中的方法 return'运行'; 
+return '运行'
+}
+ } 
+ alert(box.run());
+
+
+var box = {											//用字面量对象封装数据
+	
+	name : '李炎恢',
+	age : 28
+};
+
+
+alert(box.name);
+var box = {
+	name : '李炎恢',//字面量封装数据时候 只有冒号和逗号；
+	age : 23
+
+};
+alert(box.name);
+var box = {};
+	box.name ='陈春利';//字面量赋值时候每一句都加分号；
+
+alert(box['name']);
+
+var box = new Object();
+
+alert(box.run());
+
+unction box(obj){
+	if(obj.name !=undefined) alert(obj.name);
+	if (obj.love != undefined) alert(obj.love);
+	if (obj.age != undefined) alert(obj.age);
+}
+
+box ({
+	name : 'alanshiyi',
+	age : 23,
+	height :158,
+	address :'南宁'
+})；
+var box=new Date();
+alert(box)
+
+
+
+alert(Date.parse());
+
+var box=new Date (Date.UTC(2011,11,4,3,2,8));
+alert('toString'+box.toString());
+alert('toLocaleString'+box.toString());
+
+var box=newDate(Date.UTC(2011,11,5,15,13,16)); 
+alert('valueOf:'+box.valueOf());
+
+ar box = 
+alert( box.getFullyear())
+
+ var box = new Date();
+alert(box.getFullYear() + '-' + box.getMonth() + '-' + box.getDate() + ' ' + box.getHours() + ':' + box.getMinutes() + ':' + box.getSeconds());
+var box=new Date();
+alert(box)
+
+var box = new Date(2007, 10, 15, 17, 22, 45, 15);
+alert(box.toDateString());
+alert(box.toTimeString());
+alert(box.toLocaleDateString());
+alert(box.toLocaleTimeString());
+alert(box.toUTCString());
+
+//正则表达式
+
+var pattern= /box/ig
+var str = 'thhis is a box ,that is a Box';
+alert(str.match(pattern))  //检索
+ar pattern = /box/ig;
+var str = 'this is  a box  like a Box ';alert(str.match(pattern));
+
+var a=str.match(pattern);
+alert(a[0])
+//alert(RegExp.leftContext);
+//alert(RegExp.rightContext);
+//alert(RegExp.lastMatch)
+//alert(RegExp.lastParen)
+
+var pattern =/box/i;
+ var str='this is a (s)box jk';
+ pattern.test(str);
+ 
+alert(RegExp.multiline);
+
+ var pattern =/glooble/i;
+var str='google goole goole ';
+
+//alert(pattern.ignoreCase);
+ //alert(pattern.muitiline)
+alert(pattern.source)
+
+var pattern=/[1-9][0-9][5]/
+var str ='this is 224000!';
+alert(pattern.test(str));
+
+ar pattern =/goo\bgle/
+var str = 'googgle';
+alert(pattern.test(str));
+
+var pattern= /goo\sgle/i;
+var str ='goo gle';
+alert(pattern.test(str));//匹配空格
+
+
+var pattern =/google\b/;
+var str= 'google';
+alert(pattern.test(str))//\b到达边界
+
+var pattern =/google|baidu|alibabb/;
+var str= 'wo cijian  baidu sousoy';
+alert(pattern.test(str))//数据库筛选
+
+var pattern =/google{4,8}$/;
+var str= 'googleeeee';
+alert(pattern.test(str))//表示匹配字符e4-8次
+
+var pattern =/8.*8/;//表示匹配0个或多个
+var str= 'this is 8googjlhljkle8';
+alert(pattern.test(str))
+
+var pattern =/g[^0-9]*gle/;//白哦是任意非0-9 的数；
+
+var str = 'gohhnkbhhilogle ';
+alert(pattern.test(str));
+
+var pattern =/g[a-zA-Z]*gle/;//[a-zA-Z]表示任意a-z A-Z中的字符
+var str='gooFGHKAGAbcjdksgle ';
+alert(pattern.test(str))
+
+var pattern=/g{3, }gle/;
+var str='govjagjsksbfmgle';
+alert(pattern.test(str));
+
+var pattern = /8(.*)8/
+var str = '8googlefgsr8 '
+str.match(pattern)
+alert(RegExp.$1)
+//RegExp.$1表示获取模式中第一个分组对应的匹配字符串
+
+var pattern =/8(.*)8/;
+var str = 'n 8jkuigui8 google ';
+document.write (str.replace(pattern,'<strong>$1</strong>'));//$1获取前面匹配的字符串 
+
+
+var pattern = /(.*)\s(.*)/;
+var str= 'google  baidu';
+alert(str.replace(pattern,'$2 $1'))//位置交换
+
+var pattern =/[a-z]+/;//使用了贪婪
+var str = 'sasadd';
+alert(str.replace(pattern,'1'));//所有的字符串都会变成1
+
+var pattern =/[a-z]+?/;//使用了惰性模式
+var str = 'sasadd';
+alert(str.replace(pattern,'1'));//只有前面的第一个变成了1
+
+ 
+var pattern =/[a-z]+?/g;//使用了惰性后面再加上全局
+var str = 'sasadd';
+alert(str.replace(pattern,'1'));//就会所有的都变成1
+若关闭惰性留下全局就会只剩下1
+
+var pattern=/8(.*)8/;//使用了贪婪模式
+var str ='8google8 8google8 8google8';
+document.write(str.replace(pattern,'<strong>$1</strong >'));//google8 8google8 8google
+
+
+var pattern=/8(.*?)8/g;//使用了惰性禁止了贪婪and全局模式
+var str ='8google8 8google8 8google8';
+document.write(str.replace(pattern,'<strong>$1</strong >'));//google google google 结果是正确的
+
+也可以使用两一种是实现
+
+var pattern=/8([^8]*)8/g;//另一种惰性 屏蔽了8的匹配，也就是两边字符
+var str ='8google8 8google8 8google8';
+document.write(str.replace(pattern,'<strong>$1</strong >'));//google google google
+
+
+
+/使用exec返回数组/
+var pattern=/^[a-z]+\s[0-9]{4}$///^&/表示头和尾
+\s表示空格
+var str ='google 2012';
+alert(typeof pattern.exec(str));//返回一个包含字符串的数组
+
+var pattern=/^[a-z]+///只匹配到字母；
+var str ='google 2012';
+alert( pattern.exec(str));//返回google字符串
+
+var pattern=/^([a-z]+)\s([0-9]{4})$/  //使用了分组  
+var str ='google 2012';
+alert(pattern.exec(str));//返回google 2012,google,2012
+//解释；
+
+var pattern=/^([a-z]+)\s([0-9]{4})$/  //使用了分组  
+var str ='google 2012';
+var a=pattern.exec(str);
+alert(a.length);//3
+alert(a[0]);//google 2012
+alert(a[1]);//google
+alert(a[2]);//2012
+
+
+var pattern=/(\d)([a-z])/;//做这个叫做捕获性分组，所有的分组都捕获返回
+var str='123abc';
+alert(pattern.exec(str));
+//都写+  123abc,123,abc
+//只写第一个123a,123,a
+//只写第二个3abc,3,abc
+//两个都不写3a,3,a
+
+var pattern=/(\d+)(?:[a-z])/;//非捕获性分组只要在不需要返回的分组加?: 就不会返回；
+
+var str='123abc';
+alert(pattern.exec(str));//123a,123
+
+var pattern = /(a?(b?(c?)))/
+var str= 'abc';
+var a=pattern.exec(str);
+alert(pattern.exec(str))//abc,abc,bc,c
+
+alert(a[0]);//整个匹配到的字符串
+alert(a[1]);//匹配第一个分组(a?(b?(c?)))
+alert(a[2]);//匹配第二个分组
+alert(a[3]);//第三位
+
+var pattern=/goo(?=gle)///前瞻性捕获 goo 后面必须是gle 才能返回goo,这里一定要注意，返回的是狗哦，而不是goole 
+var str='googfj';
+alert(pattern.exec(str));
+
+var pattern = /\[///用\符号来转移正则里的特殊字符，才能匹配
+var str='['
+alert(pattern.test(str))
+
+var pattern = /^\d+/gm;//限定了首匹配，并且开启了换行模式
+var str ='1.baidu\n2.googlen\n3.jingdong'
+
+alert(str.replace(pattern,'#'))//数字被#替换掉
+
+//常用的正则
+var pattern =/[1-9][0-9]{5}/
+var str = '222003'
+alert(pattern.test(str))
+
+/见检擦文件压缩包
+var pattern= /^[\w\-]+\.(zip|gz|rar|))/;
+var  str='133sdrt.zip';
+alert(pattern.test(str));
+
+var pattern = /^[\w\-]+\.zip|gz|rar/;		//\w+，加上^来限定首字符开始匹配
+var str = '2-13asa.zip';					//文件名：字母_数字 . zip,gz,rar,7z
+alert(pattern.test(str));
+var pattern =/^[\w-]+\.zip|gz|rar/;
+var str='2-345.zip';
+alert(pattern.test(str));
+
+
+var pattern=/\s/g
+var str ='3233 2897 800'
+alert(str.replace(pattern,''))//替换空格
+
+
+var pattern = /^\s+/;
+var str = '               goo    gle              ';
+var result = str.replace(pattern, '');
+pattern = /\s+$/;
+result = result.replace(pattern, '');
+alert('|' + result + '|');
+var pattern =/^\s+/;
+var str ='        goo    gle   ';
+var a=str.replace(pattern,'');
+pattern =/\s+$/;
+a=a.replace(pattern,'');
+alert('|'+a+'|');
+
+
+
+
+var pattern =/^\s+(.+?)\s+&/;
+var str ='        goo    gle   ';
+var a=a.pattern.exec(str);
+alert('|'+a+'|');
+
+//电子邮件
+var pattern=/(^[\w\.\-]+)@([\w\-]+)\.([a-zA-Z]{2,4})$/;
+var str ='bbui@1678.com';
+
+alert(pattern.test(str));
+
+
+
+function box(num){
+
+if(num<=1){
+	return 1;
+}else{
+	return num*arguments.callee(num-1);
+}
+
+}
+alert(box(4));
+
+
+function box(num){
+	if (num<=1){
+		return 1 ;
+	}else{
+		return num*box(num-1);
+	}
+}alert(box(4))
+
+alert(this)
+ar color = 'red'；
+alert(window.color);
+alert(this.color)
+
+
+
+
+
+
+
+var box = {
+	color : '蓝色的',				//这里的color是box下的属性，也就是局部变量
+	sayColor : function() {
+		alert(this.color);			//这里this，我们确定了是代表的box对象。
+	}
+};
+
+alert(this.color);
+box.sayColor();
+var pattern =/googel/
+var  str = gogle ;
+alert(exec(pattern(str))
+
+function foo(){
+		var x=1;
+		x=x+1;
+
+	}
+        x=x+2;//无法引用变量
+
+fuction foo(){
+ var x = 1;
+ x =x+1;
+
+}
+
+	
+
+
+function foo(){
+	var = 1;
+	function bar(){
+		var y=x+1;
+
+	}
+	var z = y+1;
+foo();
+
+}
+
+
+
+function foo(){
+	x = 'A';
+	x=x+'B';
+
+    }
+
+foo();
+document.write(x)
+	
+
+
+
+var box ='Lee';
+function setBox(){
+	function setColor(){
+      return 456;
+
+	}
+	return 123;
+
+}
+
+alert(setColor())
+
+
+var s1=new String('some text');
+var s2 =s1.subtring(2);
+s1 = null;
+
+alert(s2)
+
+//变量及作用域
+
+var box = new Object();			//或者写成{}
+box.name = 'Lee';						//添加一个属性
+alert(box.name);
+
+var box = new Object();
+box.name='chen';
+alert(box.name);
+
+var box ={};
+box.name = 'chen ';
+var box2=box;//基本类型值是字符串；
+box2.age=23;       
+alert(box.name);
+
+var box =new Object();
+box.name ='chen';
+var box2=box;  //两个相等同时只向一个object ;
+box2.name ='kkk';
+alert(box2.name );
+alert(box.name);
+
+
+
+function box(num) {							//按值传递
+	num += 10;
+	return num;
+}
+
+var num = 50;
+alert(box(num));
+alert(num);										//如果是按引用传递，那么函数里的num会成为类似全局变量，把外面的num替换掉
+			
+
+function box(num) {
+
+	num += 10;
+	return num;
+}
+
+var num =20 ;
+alert(box(num));
+alert(num);
+function box(obj) {							//这里将要传递一个引用类型的参数，但不是按引用传递，是按值传递的
+	obj.name = 'Lee';
+	var obj = new Object();				//所以，JS没有按引用传参的功能，切记，不能把传递引用参数当作按引用传参
+	obj.name = 'kkk';
+}
+
+var obj = new Object();
+box(obj);
+alert(obj.name);
+
+function box(obj) {
+     obj.name='chen';
+     
+
+}
+     var obj = new Object();
+     box(obj);
+     alert(obj.name);
+
+   var obj = new Object();
+     obj.name='kkk';
+     
+    alert(obj.name)
+
+var box ='chen';
+function setBox(){
+	return 123;
+
+}
+alert(box);
+alert(setBox());
+var box ='chen ';
+function setBox(){
+	return 123;
+
+}
+alert(box);
+alert(setBox());
+
+var box = 'chen';
+function setBox(){
+	function setColor(){
+		return 456;
+	}
+	return 123;
+
+}
+alert(window.box);
+
+var box ='chen';
+function setBox(){
+	var box ='red';
+}
+setBox();
+
+alert(box);
+var box ='chen ';
+function setBox(box){
+	alert(box);
+}
+setBox('red');//通过传参 也是局部变量 作用域在setBox()范围内；
+alert(box);
+
+
+
+var s1 = new String ('some text')
+var s2 = s1.substring(5);
+s1=null;
+alert(s2)
+
+
+var box ='Mr.Lee';
+aler(box.charAt(1));
+
+var box = 'Mr. Lee';
+//alert(box.charAt(1));	
+alert(charCode)
+
+
+
+
+
+
+
+
+
+
+function select(start, end) {
+	var total = end - start + 1;
+	return Math.floor(Math.random() * total + start);
+}
+
+
+for (var i=0;i<10;i++) {
+	document.write(select(1, 3));			//范围5-10	
+	document.write('<br />');
+}
+function select(start,end){
+
+      var total = end - start + 1;
+      return Math.floor(Math.random()*total+start);
+
+}
+for (var i=0; i<10;i++){
+	document.write(select(1, 3));
+	
+}
+
+
+var box = new Object ();  //创建对象
+box.name = 'chen';   //添加属性
+box.age = 100;    //
+box.run = function (){
+ 	return this.name +this.age +'运行中..'//this表示当前作用于下的对象
+//this 表示new object（）实例化出来的那个对象即在方法里用this
+ }
+alert(box.run());//chen100运行中..
+
+// this不能用在外面（全局）
+
+
+
+
+*/
+
+
+
+//工厂模式
+
+/*function createObject(name,age){
+var obj= new Object ();  //创建对象
+obj.name = name ;   //添加属性
+obj.age = age;  
+obj.run = function (){
+	return this.name+this.age+ '运行中..';
+};
+   return obj;
+}
+
+var box1=createObject('chen,100')
+var box2 =createObject('alanshiyi,200');
+
+alert(box1.run());
+alert(box2.run());
+
+//构造函数
+function Box (name,age){
+	this.name =name ;
+	this.age=age ;
+	this.run=function(){
+		return this.name +this.age+'运行中..'
+	};
+};
+var box1= new Box('chen',100);
+var box2 = new Box ('alansiyi',200)
+alert(box1.run());
+alert(box2.run());
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+</head>
+<body>
+	
+</body>
+</html>

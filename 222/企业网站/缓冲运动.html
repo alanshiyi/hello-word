@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>缓冲运动</title>
+<style>
+	
+body{
+	padding: 0;
+	margin:0;
+}
+#show{
+	width: 200px;
+	height: 200px;
+	background:red;
+   position: relative;
+   left:-200px;
+   top:0;
+}
+#show span{
+	width: 20px;
+	height: 80px;
+    background: green;
+	position: absolute;
+	top:50px;
+	left:200px;
+
+
+}
+
+</style>
+<script>
+	window.onload=function(){
+var oS=document.getElementById('show')
+oS.onmouseover=function(){
+setMove(0)
+}
+oS.onmouseout=function(){
+setMove(-200)
+}
+}
+var timer=null;
+function setMove(target){
+clearInterval(timer);
+var oS=document.getElementById('show')
+timer=setInterval(function(){
+ var speed=(target-oS.offsetLeft)/20;
+ speed=speed>0?Math.ceil(speed):Math.floor(speed)
+if(oS.offsetLeft==target){
+	clearInterval(timer)
+}else{
+	oS.style.left=oS.offsetLeft+speed+'px'
+}
+
+},10)
+}
+
+
+
+
+</script>
+
+
+</head>
+<body>
+	<div id ="show"><span > 分享到</span></div>
+</body>
+</html>

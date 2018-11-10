@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+
+  <!-- @keyframes lineA{
+        0%,100%{clip:rect(0,340px,2px,0)}
+        25%{clip:rect(0,2px,340px,0)}
+        50%{clip:rect(338px,340px,340px,0)}
+        75%{clip:rect(0,340px,340px,338px)}
+    }
+   @keyframes lineB{
+        0%,100%{clip:rect(338px,340px,340px,0)}
+        25%{clip:rect(0,340px,340px,338px)}
+        50%{clip:rect(0,340px,2px,0)}
+        75%{clip:rect(0,2px,340px,0)}
+        
+    }
+   
+
+    	
+.box{
+	background-color: green;
+	width:300px;
+	height:300px;
+	margin:120px;
+	position:relative;
+	z-index: 3;
+}
+
+.box::before{
+	content:'';
+    position:absolute;
+    left:0;
+   top:0;
+   bottom:0;
+   right:0;
+   border:2px solid yellow;
+   background： skyblue;
+   margin:-20px;
+   z-index: -1;
+   clip:rect(0,100px,50px,10px);
+   -webkit-animation: lineA 8s linear infinite;
+        -o-animation: lineA 8s linear infinite;
+        animation: lineA 8s linear infinite;
+}
+
+.box::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border: 2px solid red;
+        margin: -20px;
+        z-index: -1;
+        -webkit-animation: lineB 8s linear infinite;
+        -o-animation: lineB 8s linear infinite;
+        animation: lineB 8s linear infinite;
+    }-->
+   
+
+
+
+
+  </head>
+  <body>
+ <button id='myBtn'> 点击这里</button>
+ <p id='demo'></p>
+  </body>
+ <script>
+ /*	
+// var str = 'Hello world!';
+// document.write(str.match('world')+'<br>')
+
+// document.write(str.match('world')+'<br>')
+
+// var d= new Date();
+
+// alert(d.getTime())
+
+var d = new Date();
+	
+      var weekday=new Array(7);
+      
+   var fruits = ["Banana", "Orange", "Apple", "Mango"];
+function myFunction(){
+	fruits.push("Kiwi")
+	var x=document.getElementById("demo");
+	x.innerHTML=fruits;
+}
+
+   function myFunction(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.splice(2,0,"Lemon","Kiwi");
+	var x=document.getElementById("demo");
+	x.innerHTML=fruits;
+}
+
+var c = prompt("请输入摄氏度")
+        var d = parseInt(9/5*c)+32;
+    document.write("华氏度为：" + d);
+var  values = [1,2,3,4,5,6,7]
+    alert(Math.max.apply(Math,values));
+    var num=Math.floor(Math.random()*10+1)
+    alert(num);
+var num=Math.floor(Math.random()*9+2);
+alert(num)
+// 通过计算来实现值的总数；
+function selectFrom(upperValue,lowerValue){
+   var chioces= upperValue-lowerValue+1;
+   return Math.floor(Math.random()*chioces+lowerValue)
+}
+var num=selectFrom(2,10);
+alert(num);
+
+var colors=['red','green','blue','yellow','black','purple']
+var color=colors[selectFrom(0,colors.length-1)];
+alert(color)
+var colors=['red','green','blue','yellow','black','purple']
+alert(colors);
+alert(colors.toString());
+alert(colors.valueOf());
+alert(colors.toLocaleString());
+
+
+var colors=new Array();
+var count= colors.push('red','green',)
+alert(count)//推入
+count = colors.push('black')
+alert(count)
+var item=colors.pop();
+alert(item);
+alert(colors.length);
+
+
+var colors=['red','blue']
+colors.push('brown')
+colors[3]='black';
+alert(colors.length);
+var item=colors.pop();
+alert(item);
+
+var colors=new Array()
+var count=colors.unshift('red','green')
+alert(count);
+
+count = colors.unshift('black')
+alert(count)
+var item= colors.pop();
+alert(item)
+ alert(colors.length)
+
+
+ var colors=['red','green','blue']
+var removed=colors.splice(0,2)//0 代表第几位开始，2代表删除个数
+alert(colors)//green blue 
+alert(removed)
+
+var colors=['red','green','blue']
+var removed=colors.splice(2,1,'dsion')
+alert(colors)
+alert(removed)
+
+var numbers= [1,2,3,4,5,4,3,2,1]
+alert(numbers.indexOf(4))//3从头开始索引
+alert(numbers.lastIndexOf(4))//5从后开始
+
+
+
+ var now = new Date();
+// alert(Date.parse('May 22,2018'))求描述
+var somedate=new Date(  )
+var start= Date.now()
+
+var r=confirm('按下按钮！')
+if(r==true)
+{
+  alert('你按了确定') 
+
+}
+else{
+	alert("你按了取消")
+}
+
+var person= prompt('请输入你的名字','alanshiyi')
+
+if (person!==null&&person!=''){
+	alert('你好'+person+'!今天感觉如何？');
+setInterval(function(){
+	alert('你好')
+},1000)
+
+setTimeout(function(){
+	alert('你好')
+},2000)
+// 不重复 一定时间弹出
+
+
+
+// 显示当前时间
+var myday = new Date()
+
+alert(myday.toLocaleString())
+
+ // 8/20/2018, 9:23:06 AM
+
+var myday = new Date();
+document.write(setInterval(function(){myday.toLocaleString()},1000))
+
+
+var myday=setInterval(function(){myTime()},1000)
+function  myTime(){
+
+var d= new Date();
+var t= d.toLocaleString();
+document.getElementbyId('demo').innerHTML=t;
+}
+
+
+
+var myVar=setInterval(function(){myTimer()},1000);
+function myTimer(){
+	var d=new Date();
+	var t=d.toLocaleTimeString();
+	document.getElementById("demo").innerHTML=t;
+}document.cookie='Jonhn Doe';
+// alert(box.style)[object CSS2Properties
+   // alert(box.style.color)
+   // alert(box.style.background)rgb(204, 204, 204) none repeat scroll 0% 0%
+   // alert(box.style.fontSize)20px  注意 font Size 不加-
+   // alert(box.style.styleFloat)ie情况下才显示
+   // alert(box.style.cssFloat);
+// 做兼容 ie
+  alert(box.style.cssFloat||box.style.styleFloat)
+  alert( typeof box.style.cssFloat!=undefind?box.style.styleFloat="right":box.style.styleFloat)
+
+box.style.color='red';
+box.style.fontSize='20px';
+box.style.styleFloat='right'
+typeof box.style.cssFloat!='undefind'?box.style.cssFloat='right':box.style.styleFloat='right'
+function hasclass(element,cName){
+ alert(!!element.className.match(newRegExp('(\\s|^)'+cName+"(\\s|$)")))
+
+}
+
+alert(document.implementation.hasFeature('styleSheets','2.0'))
+var link = document.getElementsByTagName('link')
+var sheet = link.sheet;
+alert(link)
+var sheet = link.sheet;
+alert(sheet)
+var sheet=link.sheet||link.styleSheet;
+alert(sheet) 
+document.styleSheets
+*/
+
+
+ // DOM2提供了一些属性和方法
+// alert(box.style.length)
+
+// alert(box.style.cssText)通过他能访问到style中的css代码
+
+// box.style.removeProperty('color','yellow')
+// 移除属性
+// var link= document.getElementById('b');
+// var style=window.getComputedStyle(b,null);
+// alert(style.color)
+// var style=d.currentStyle;
+// alert(style.color);
+//var var sheet=link.sheet;
+//alert(sheet) 
+// hasclass(box,aaa)
+
+	
+/*// 检测浏览器是否支持sheet样式
+// alert(document.implementation.hasFeature('styleSheets','2.0'))
+//var link = document.getElementsByTagName('link')[0];
+// alert(link)[object HTMLLinkElement]
+//var sheet= link.sheet
+// alert(sheet)object CSSStyleSheet 
+var sheet = document.styleSheets[0]
+alert(sheet.cssRules[0]);alert(box.style.width)
+alert(box.style.height)
+
+alert(sheet.cssRules[0].cssText)
+
+var x= 2;
+var y=1;
+if(x==y){//把y的值赋值给x
+	console.log(x)
+}
+if(m！== 1){
+	if( n == 2){
+		alert('hello')
+	}else{
+		alert(world)
+	}
+}
+var f
+switch(fruit){
+  case 'banana':
+  break;
+  case 'apple':
+  break;
+  default;
+}
+var n;
+n=3
+var even=(n%2===0)? true：false;
+alert(even);
+var even;
+if (n % 2 === 0) {
+  even = true;
+} else {
+  even = false;
+}
+var i = 0;
+while (i<100){
+	
+	i++;
+	if(i%2===0)continue;
+alert(i)
+
+for (var i = 0; i<3;i++){
+	for(var j = 0; j<3;j++){
+		if(i===1&&j==1)break top
+	wicth(1+3){
+	case 2+2:
+	f();
+	break;
+	default:
+	never}
+}
+instanceof()typeotypf\typeotypeof typeof ytypeof typeof instanceof () instanceof instanceof  instanceof
+swicth()
+default()
+
+Object.propertype.toString 
+		
+Object.propertype.toString 
+
+number string boolean undefind null object undefind null 
+number string boolean undefind null object undefind null object 
+array array array funcytion function array object object funcyion typeof
+
+var a=[]
+var o={}
+
+alert(o instanceof Array) 
+alert(a instanceof Array) 
+var i；
+i
+
+function (0){
+
+return x;
+
+
+}
+
+f()
+
+var o = new Object ()
+o.p 
+
+function (){}
+
+f()s
+
+document.getElementById('myBtn').onclick=function(){displayDate()}
+
+function displayDate(){
+
+  document.getElementById('demo').innerHTML=Date()
+}
+
+
+
+
+*/
+
+
+var a3=new Array(4,'hello',new Date());
+alert(a3)
+
+
+
+
+
+
+
+ </script>
+  </body>
+</html>

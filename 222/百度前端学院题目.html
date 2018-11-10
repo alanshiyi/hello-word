@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {background-color:#E8E8E8;
+}
+	</style>
+</head>
+<body>
+	 <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result" onclick="a()">运算结果</p>
+
+    <script>
+    
+var x=document.getElementById('first-number').value
+var y=document.getElementById('second-number').value
+  var a= document.getElementById('result');
+    a.onclick=function(){
+switch(select){
+        case "+":
+            a = parseFloat(x) + parseFloat(y);
+        break;
+        case "-"
+          a = parseFloat(x) - parseFloat(y);
+        break;
+        case "*":
+            a = parseFloat(x) * parseFloat(y);
+        break;
+        case "/":
+            a = parseFloat(x) / parseFloat(y);
+    }
+
+}
+    </script>
+
+</body>
+</html>

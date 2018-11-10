@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+
+
+	<script>
+	window.onload=function(){
+    var oBtn=document.getElementsByTagName('input');
+  var arr=['A','B','C','D']
+   var brr=['x','y','z']
+   var jrr=['r','s','t'] 
+
+    for(var i=0;i<oBtn.length;i++){
+    	oBtn[i].num=0;
+     oBtn[0].onclick=function(){
+      this.value=arr[this.num]
+      this.num++;//0
+     if(this.num===arr.length){
+     	this.num=0;
+     }}
+      
+for (var i=0;i<oBtn.length;i++){
+	oBtn[i].num=0;
+oBtn[1].onclick=function(){
+this.value=brr[this.num]
+this.num++;
+if(this.num===brr.length){
+this.num=0;
+
+
+}
+
+}
+}
+
+}	
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="0">
+	<input type="button" value="0">
+	<input type="button" value="0">
+</body>
+</html>

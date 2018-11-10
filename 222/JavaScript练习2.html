@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascrip练习-数据类型</title>
+	<script>
+	/*	
+//数据类型
+var box;
+alert(typeof box )  //box 是undefined类型
+
+var box = true ;
+alert(typeof box)// boolean
+
+var box = 'alanshiyi '
+alert(typeof box )//string 
+
+var box = null 
+alert(typeof box)//object 
+
+var box =234
+alert(typeof box )//number
+
+var box = {};
+alert(typeof box) //object
+
+//空的对象，表示这个对象没有创建，里面什么东西都没有
+// 空的对象，表示没有创建，就是一个null
+
+var box =new Object ()
+alert(box )//[object Object]
+
+function box(){
+
+}
+alert(typeof box )//function 
+
+//box 是function函数值是function剥削（）{}，类型返回的字符串是function
+
+alert(typeof new Object ())//可以直接使用字面量
+
+var box ={}
+if (box != null ){
+	alert( '对象已经创建成功') 
+};//不等于null
+
+var box = 10 ;
+do {
+	alert(box);
+	box++;
+
+}while (box<5);
+
+for (var box =1;box<=10;box++){
+	if ( box==5 )break;
+	document.write(box+'<br/>');
+}
+
+for (var box =1; box<=10;box++){
+	if(box==5) continue;
+   document.write(box+'<br/>')
+}
+
+function box(){
+	alert('fgj')
+}box()
+
+function box(name,age ){
+    alert(name+age)
+}
+
+box('wuio',79)
+
+function box(){
+	return '啊擦'
+}
+
+
+alert(box())//return 的使用
+
+
+var strInfo = box ('chen ',23);
+alert(strInfo);
+function box (num){
+	if (num<=5)
+		return num;
+	
+}
+
+alert(box(4))
+
+function box(num) {
+	if (num < 5) 
+	return num;							//当一个函数遇到第一个return，就会终止函数继续往下执行
+	return 100;
+}
+
+
+alert(box(7));
+// arguments 使用
+function box (){
+	return arguments[0]+'|'+arguments[1]+'|'+arguments[2]+'|'+arguments[3]+'|'+arguments[4];
+}
+alert(box('alanshiyi',22,'计算机','广西',56))
+
+// argumets 智能使用
+function box (){
+	var sum=0;
+	for (var i=0;i<arguments.length;i++){
+		sum += arguments[i]
+	}
+return sum ;
+}
+alert(box (10,45));
+
+
+function  box(){
+    return num+10;
+
+}
+function box(num){
+	return num +200;
+
+}
+
+alert(box (40,1))//重载  第二个函数会把第一个给覆盖掉
+
+对象和数组
+
+对象包含1 属性和方法
+
+
+
+var box = new Object();							//创建一个对象
+box.name = '李炎恢';
+box.age = 28;
+alert(box.age);
+var box= {};
+alert(box)// 对象创建成功
+
+var box = {// 字面量对象封装数据
+	name : 'alanshi',//对象里不能加;
+	age :'12'
+};
+alert(box.name );
+alert(box.age )
+
+
+
+var box ={}
+box.name='alanshiyi';
+alert(box.name );
+
+var box = {											//用字面量对象封装数据
+	name : '李炎恢',								//属性可以用引号来括起来
+	age : 28
+};
+alert(typeof box.name);
+alert(box['name '])// 数组输出得用''括起来
+
+
+
+
+var box = {// 字面量对象封装数据
+	name : 'alanshi',//对象里不能加;
+	age :'12'
+};
+alert(box.name );
+alert(box.age )
+alert(box)
+
+
+var box =new Object();
+box.name = 'yuo';
+alert(box);
+
+
+var box = {};
+box.name='ghkl' 
+box.age=78;
+box.run='fti'
+alert(box.run());
+
+var box = new Object();							//创建一个对象
+box.name = '李炎恢';
+box.age = 28;
+box.run = objrun;										//这里有点小复杂
+alert(box.run());	
+
+var box = {											
+	name : '李炎恢',							
+	age : 28,
+	run : function () {								//匿名函数
+		return '123';
+	}
+};
+alert(box.run());										//调用方法(函数)，如果没有圆括号，会打印代码
+delete box.name ;	
+alert(box.name )
+
+
+alert(box.age)
+
+// 声明一个数组
+
+var  box = new Array();
+alert(typeof box);  //数组属于object类型
+
+var box = new Array(10);
+box[3]='jkla';
+box[5]=457;
+alert(box)//不够的用逗号补足
+
+var box = ['李炎恢', 28, '盐城', new Date()];
+alert(box);
+
+alert(box.toSting());
+
+var box = ['李炎恢', 28, '盐城', new Date()];
+alert(box.push('计算机','南宁'));//6 返回最新长度
+//alert(box.toString());
+
+
+//alert(box.valueOf());
+//alert(box.toLocaleString());	
+alert(box.pop());//移除最后一组元素
+
+alert(box);
+
+var box = ['alansi',22, '南宁']
+alert(box.unshift('jian'))//给数组添加一定的长度
+alert(box)
+
+var box = [1,2,3,4,5]
+alert(box.reverse());// 逆序
+
+
+var box = [4,5,2,67,8]
+alert(box.sort())
+
+ var box = [4,1,62,7,39];
+alert(box.sort());	 									//从小到大排序  按第一位数字大小比较
+alert(box);
+var box = [0,1,3,4,6,7];
+alert(box.sort(compare));
+alert(box.reverse());
+function compare(value1,value2){
+	if (value1<value2){
+		return -1;
+	}else if (value1>value2){
+		return 1;
+
+	}else{
+		return 0;
+	}
+}
+
+
+alert(compare(2,7))
+var box = ['alanshiyi',23,'南宁']
+var box2=box.splice(0,2);
+alert(box2)//从0 开始截取
+alert(box)
+
+var box = ['alanshiyi',23,'南宁']
+var box2 = box.splice(1,1,100)
+alert(box2)
+alert(box)
+
+var box = ['李炎恢', 28, '盐城'];			//替换
+var box2 = box.splice(1,2,100);//28 盐城  从第二条开始截取2个元素
+alert(box2);
+alert(box);
+
+// 日期函数
+
+
+
+var  box = new Date();
+alert(box)
+
+var box = new Date ('1/8/2018')
+alert(box)//Mon Jan 08 2018 00:00:00 GMT+0800 (中国标准时间)
+ 
+ var box = new Date (Date.parse('1/8/2018'))
+ alert(box)// 把毫秒数转化为时间
+
+//Mon Jan 08 2018 00:00:00 GMT+0800 (中国标准时间)
+
+
+alert(Date.parse('1/8/2018'));//毫秒数
+
+1515340800000
+
+alert(Date.parse())// 没有传入日期格式，返回NAN 
+
+
+//火狐返回Invalid Date(无效的日期)
+//谷歌返回一个混乱的日期
+//IE返回一个NaN
+
+
+var box = new Date(2018 ,8,1,20,23,20,35);
+alert(typeof box);
+alert('toString:'+box.toString())//toString:Sat Sep 01 2018 20:23:20 GMT+0800 (中国标准时间
+
+alert('toLocaleString:'+box.toLocaleString() )//toLocaleString:2018/9/1 下午8:23:20
+
+alert('valueOf:'+box.valueOf())//valueOf:1535804600035  毫秒数
+
+var box = new Date(2018 ,8,1,20,23,20,35);
+alert(box. toDateString ())//Sat Sep 01 2018
+alert(box.toTimeString ())//20:23:20 GMT+0800 (中国标准时间)
+alert(box.toLocaleDateString())//2018/9/1
+alert(box.toLocaleTimeString());//下午8:23:20	
+alert(box.toUTCString()); //Sat, 01 Sep 2018 12:23:20 GMT
+
+ 
+
+box.setTime(100);
+alert(box.getTime());
+alert(box.getYear());//废弃
+box.setFullYear(2009);
+alert(box.getFullYear());
+box.setMonth(5);
+alert(box.getMonth());
+
+var box = new Date()
+alert(box.getMonth()+1)
+
+var box = new Date()
+box.setUTCFullYear(2008);
+alert(box.getUTCFullYear());
+
+alert(box.getUTCHours());
+box.setUTCFullYear(2018)
+alert(box.getUTCFullYear())
+var box = new Date(2007, 10, 15, 10, 22, 45, 15);
+alert(box.getFullYear() + '-' + box.getMonth() + '-' + box.getDate() + ' ' + box.getHours() + ':' + box.getMinutes() + ':' + box.getSeconds());
+month date hour 
+
+
+//正则表达式
+
+
+var box = new RegExp('box');
+alert(box)// 正则表达式字面量的表示方法
+
+var box = new RegExp('box','hello')
+alert(box);
+
+var box = /box/
+alert(box);
+
+var  box = /box/
+ alert(box)//字面量的方式使用正则
+
+var box = /box/ig // 全局模式 
+alert(box)
+
+
+var pattern = RegExp ('box','i')
+var str = 'box';
+alert(pattern.test(str));
+
+
+var pattern= /box/i ;
+var str ='this is a box'
+alert(pattern.test(str))
+
+
+var str1 ='box'
+var str2 = 'box'
+alert(str1==str2)//字符串与字符串的比较
+
+
+function box() {
+	var box = 0 ;
+	for (var i= 0; i<arguments.length;i++){
+   sum += arguments[i]
+}
+
+    return sum
+  }
+
+alert(box(10,23))
+
+var age = 28;//全局
+function sayAge(){
+	alert(this.age)
+}
+alert(window.age )
+sayAge()
+window.sayAge();
+
+comfirm('请确定或者取消');
+if (comfirm('请确定或者取消')){
+	alert('您按了确定');
+}
+else{
+	alert('您按了取消');
+}
+
+window对象是最顶层的对象
+window对象有六大属性，这六大属性本身也是对象
+window对象旗下的document属性也是对象，并且document属性旗下还有五大对象
+
+强制性操作
+
+
+window.closed;//强制性
+window.alert('chen ');
+comfirm('请。。。。')
+
+
+ 
+
+
+ if (confirm('请选择！')) {
+	alert('您按了确定按钮！');
+} else {
+	alert('您按了取消按钮！');
+}
+ if (confirm('qingxuanze')){
+		alert('您按了确定按钮!');
+   }
+	else {
+	alert('您按了取消按钮!');
+}
+
+var box = prompt('请输入一个数字',0)
+if (box=!null){
+
+	alert(box);
+
+}
+
+defaultStatus = 'Lee';		//默认初
+
+function a(){
+	defaultStatus='cgo'
+}
+print();
+
+
+window.open('http://www.baidu.com'); //新建页面并打开百度 
+
+open('http://www.baidu.com','baidu'); //新建页面并命名窗口并打开百度 
+open('http://www.baidu.com','_parent'); //在本页窗口打开百度,_blank 是新建
+
+
+open('opener.html','baidu','width=400,height=400,top=100,left=100');
+ 
+open('http://www.baidu.com');//直接将网址拉下来
+
+var box=open('http://www.baidu.com','baidu',width=400,height=400,top=100,left=100)
+
+box.alert('chen')//表示在百度窗口下进行弹出子窗口
+document.onclick=function (){
+	window.oper.document.write{'dwfds'}
+}
+
+
+
+v
+
+var num = 0;
+var max = 5;
+var id = null;
+
+
+function box() {			//这次有用了，this本身不能代表ID
+	num++;
+	document.getElementById('a').innerHTML += num;
+	if (num == max) {
+		clearInterval(id);
+		alert('5秒到了！');
+	}
+}
+
+id = setInterval(box, 1000);
+
+
+/使用超时调用设置定时器
+ var num=0;
+ var max=5;
+
+
+ function box(){
+   num++;
+   document.getElementById('a').innerHTML += num;
+   if (num ==max ){
+   	
+   	alert('5秒到了');
+   }
+   else{
+
+	setTimeout(box,1000);
+
+   }
+ }
+setTimeout(box,1000);
+
+alert(window.location)//返回当前页面的地址
+alert(window.document.location)
+
+location.hash= '#66'//会跳转到新的url
+alert(location.hash)
+
+function getArgs(){
+	return location.seach;
+}
+
+alert(getArgs())
+
+
+
+  //alert(navigator.appName)//浏览器名称
+//alert(navigator.appVersion)//
+//alert(navigator.userAgent)//用户代理字符串，表示浏览器信息
+
+//alert(BrowserDetect.browser);
+//alert(BrowserDetect.version)
+
+//检测插件
+
+
+
+for (var i = 0; i < navigator.plugins.length; i ++) {
+	document.write('插件名：' + navigator.plugins[i].name + '<br />');
+	document.write('文件名：' + navigator.plugins[i].filename + '<br />');
+	document.write('描　述：' + navigator.plugins[i].description + '<br />');
+	document.write('<br />');
+}
+
+for(var i=0;i<navigator.plugins.length;i++){
+	document.write('插件名：'+navigator.plugins[i].name +'<br/>');
+	document.write ('文件名：'+navigator.plugins[i].filename +'<br/>')
+
+   document.write('描述：'+navigator.plugins[i].description+'<br/>')
+   document.write('<br/>')
+}
+*/
+window.onload = function () {
+if (document.getElementById) {
+		var box = document.getElementById('box');
+		alert(box);
+	} else {
+		alert('您的浏览器不兼容，请更换~');
+	}
+};
+
+ 	
+ 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+<div class="box">测试Div</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+<style>	
+.t1{
+	width: 	300px;
+}
+</style>
+
+	<script>
+		 window.onload=function(){
+
+var oTime=document.getElementById('time')
+var 
+
+    var iNow= new Date();
+    var iNew= new Date('')
+   var t=Math.floor((iNew-iNow)/1000)
+   var str= Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
+ alert(str)
+ 
+
+
+
+
+
+
+
+
+
+		 }
+
+
+
+	</script>
+</head>
+<body>
+	距离：<input 规划大纲vuiclass="t1" type="text"><br/>
+	还剩：<input  class="t1" type="text">
+	<input type="button" value='开始倒计时吧'>
+	<p id='time'></p>
+</body>
+</html>

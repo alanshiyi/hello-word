@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多物体运动</title>
+	<style>
+	*{
+		margin: 0;
+		padding:0;
+	}
+
+	ul{
+list-style: none;
+
+
+}
+	ul li  {
+width: 100px;
+height: 100px;
+background: red;
+margin-bottom: 20px;
+
+
+
+}
+
+</style>
+<script>
+window.onload=function(){
+var oLi=document.getElementsByTagName('li')
+
+for(var i=0;i<oLi.length;i++){
+   oLi[i].timer=null//因为大家的定时器都是统一挂掉的，所以定时器的每个都得有  所以定时器就成了每个人的了obj.timer
+	oLi[i].onmouseover=function(){
+    setMove(this,400)
+	}
+
+
+	oLi[i].onmouseout=function(){
+    setMove(this,100)
+	}
+}
+//timer=null;
+function setMove( obj,target){
+clearInterval(obj.timer)//定时器统一关掉
+obj.timer=setInterval(function(){
+
+var speed=(target-obj.offsetWidth)/8;
+speed=speed>0?Math.ceil(speed):Math.floor(speed);
+if(obj.offsetWidth==target){
+	clearInterval(obj.timer)
+}else{
+	obj.style.width=obj.offsetWidth+speed+'px'
+
+}
+
+
+
+
+},30)
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>

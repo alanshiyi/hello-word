@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<script>
+	/*
+	function checkscope(){
+		var scope='local scope';
+		function f(){
+			return scope;
+		}
+	return f()
+	}
+checkscope()
+
+
+
+function F(){
+	var arr=[],1;
+	for(i=0;i<30;i++){
+		arr[i]=function(){
+			return i;
+
+		}
+
+	}
+	return arr;
+
+}
+
+window.onload=function(){
+var oUl=document.getElementById('list')
+var aLi=oUl.getElementsByTagName('li')
+var oP=document.getElementsByTagName('p')
+
+for(var i=0; i<aLi.length;i++){
+	f(aLi[i])
+}
+
+
+function f(oLi){
+	var aBth=oLi.getElementsByTagName('input')
+	var oStrong=oLi.getElementsByTagName('strong')[0];
+	var oEm=oLi.getElementsByTagName('em')[0];
+	var oSpan=oLi.getElementsByTagName('span')[0];
+	var n1=Number(oStrong.innerHTML)//出来的是数字若没有转换那就是字符串；
+    var n2=parseFloat(oEm.innerHTML)//除掉元字
+
+    aBth[0].onclick=function(){
+    	n1--;
+    	if(n1<0){
+    		n1=0;
+    	}
+    	oStrong.innerHTML=n1;
+    	oSpan.innerHTML=n1*n2+'元';
+    }
+    aBth[1].onclick=function(){
+    	n1++;
+    	oStrong.innerHTML=n1;
+    	oSpan.innerHTML=n1*n2;
+    }
+}
+}
+
+
+
+window.onload=function(){
+var oUl=document.getElementById('ul')
+
+}
+
+var abc
+alert(abc)//undefined
+abc=123;
+alert(123)
+
+var getValue,setValue；
+(function(){
+	var secret=0;
+	getValue=function(){
+		return secret;
+	}
+	setValue=function(v){
+     if(type v==='number'){
+     	secret=v;
+     }
+	}
+})
+
+//匿名函数和闭包
+//普通函数
+
+// function box(){
+// 	return 'chen';
+// }
+// alert(box())
+// function(){
+// 	return 'chen'//单独的匿名函数是无法运行的
+// }
+//把匿名函数赋值给变量
+var box=function(){
+	return 'chen';
+}
+alert(box())//可以打印
+//通过自我执行来执行匿名函数
+
+(function(){
+	alert('chen')
+})()
+
+
+
+var f=function(a){
+	alert(a)
+}
+f()
+
+
+window.onload=function(){
+var oUl=document.getElementById('list')
+var aLi=oUl.getElementsByTagName('li')
+var oP=document.getElementsByTagName('p')
+
+for(var i=0; i<aLi.length;i++){
+	f(aLi[i])
+}
+
+
+function f(oLi){
+	var aBth=oLi.getElementsByTagName('input')
+	var oStrong=oLi.getElementsByTagName('strong')[0];
+	var oEm=oLi.getElementsByTagName('em')[0];
+	var oSpan=oLi.getElementsByTagName('span')[0];
+	var n1=Number(oStrong.innerHTML)//出来的是数字若没有转换那就是字符串；
+    var n2=parseFloat(oEm.innerHTML)//除掉元字
+
+    aBth[0].onclick=function(){
+    	n1--;
+    	if(n1<0){
+    		n1=0;
+    	}
+    	oStrong.innerHTML=n1;
+    	oSpan.innerHTML=n1*n2+'元';
+    }
+    aBth[1].onclick=function(){
+    	n1++;
+    	oStrong.innerHTML=n1;
+    	oSpan.innerHTML=n1*n2;
+    }
+}
+}
+
+
+
+(function(){
+	alert('chen')
+})()
+
+//把匿名函数自我执行的赋值给变量；
+var box=(function(){
+	return 'chen '
+})()
+alert(box)
+
+alert((function(){
+	return 'chen ';
+})())
+
+//自我执行函数传参
+(function(a){
+	alert(a)})(100)
+
+function box(){
+	return function(){//闭包
+		return 'chen';
+	}
+}
+alert(box()())
+// 闭包值有权访问另一个函数作用域变量总的函数。创建出啊将闭包的常见方式,一个函数内部创建另一个函数，通过另一个函数访问这个函数的局部变量
+function box(){
+	return function(){
+		return 'lee'
+	}
+}
+alert(box())
+*/
+
+window.onload=function(){
+
+var oUl=document.getElementById("list")
+var aLi=document.getElementsByTagName('li')
+
+for(var i=0;i<aLi.length;i++){
+f(aLi[i])
+}
+function f(oli){
+
+var oBth=oLi.getElementsByTagName('input')
+var oStrong=oLi.getElementsByTagName('strong')[0]
+var oEm=oLi.getElementsByTagName('em')[0]
+var oSpan=oLi.getElementsByTagName('span')[0]
+
+var n1=Number(oStrong.innerHTML)
+var n2=parseFloat(oEm.innerHTML)
+
+oBth[1].onclick=function(){
+	n1++;
+	oStrong=n1;
+oSpan.innerHTML=n1*n2
+}
+oBth[0].onclick=function(){
+	n1--;
+	if(n1<0){
+		n1=0;
+	}else{
+		n1;
+	}
+	oStrong=n1;
+	oSpan.innerHTML=n1*n2;
+}
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+<ul id='list'>
+	<li>
+		<input type="button" value='-'>
+	<strong>0</strong>
+	<input type="button" value='+'>
+    单价：<em>12.5元</em>
+    小计：<span>0元</span>
+     </li>
+     <li>
+		<input type="button" value='-'>
+	<strong>0</strong>
+	<input type="button" value='+'>
+    单价：<em>10.5元</em>
+    小计：<span>0元</span>
+     </li>
+     <li>
+		<input type="button" value='-'>
+	<strong>0</strong>
+	<input type="button" value='+'>
+    单价：<em>8.5元</em>
+    小计：<span>0元</span>
+     </li>
+     <li>
+		<input type="button" value='-'>
+	<strong>0</strong>
+	<input type="button" value='+'>
+    单价：<em>5.5元</em>
+    小计：<span>0元</span>
+     </li>
+</ul>
+
+<p>商品合计：<em>0</em>件 ,共花费了：<span>0</span>元<br/>
+最贵的商品单价是:0元</p>
+
+</body>
+</html>

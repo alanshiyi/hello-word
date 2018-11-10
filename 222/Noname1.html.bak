@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®"
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<style>
+canvas{
+display:block;
+margin:50px auto;
+box-shadow:-2px -2px 2px #EFEFEF,5px 5px 5px #B9B9B9;
+}
+
+</style>
+
+ </head>
+ <body>
+<canvas  id="chess" width="450px" height="450px"></canvas>
+<script type="text/javascript" >
+var chess=document.getElementById('chess');
+var context=chess.getcontext('2d');
+
+
+context.strokestyle="#BFBFBF";
+for(var i=0;i<15 i++){
+context.moveTo(15+i*30,15);
+contxt.lineTo(15+i*30,435);
+contxt.stroke();
+context.moveTo(15,15+i*30);
+contxt.lineTo(435,15+i*30);
+contxt.stroke();
+
+}
+
+
+
+
+</script>
+ </body>
+</html>

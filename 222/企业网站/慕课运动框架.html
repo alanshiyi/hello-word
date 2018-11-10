@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分享运动</title>
+<style>
+	body{
+		padding :0;
+	   margin:0;
+	}
+		#div1{
+			width:200px;
+			height:200px;
+			background:yellow;
+			position:relative;
+			left:-200px;
+			top:0;
+
+		}
+       
+         #div1 span{
+         	width: 20px;
+         	height: 80px;
+         	background: red;
+         	position: absolute;
+         	left:200px;
+         	top :80px;
+         }
+        
+</style>
+<script>
+	window.onload=function(){
+ var  oDiv=document.getElementById('div1')
+
+oDiv.onmouseover=function(){
+setMove(0)
+}	
+
+oDiv.onmouseout=function(){
+setMove(-200)
+}
+}
+var timer=null;
+function setMove(itarget){
+	clearInterval(timer)
+ var  oDiv=document.getElementById('div1')
+  	timer=setInterval(function(){
+  		var speed=0;
+  		if(oDiv.offsetLeft>itarget){
+  			speed=-10;
+
+  		}else{
+  			speed=10;
+  		}
+  		if(oDiv.offsetLeft==itarget){
+  			clearInterval(timer)
+  		}else{
+		oDiv.style.left=oDiv.offsetLeft+speed+'px'
+	}
+	},30)
+}
+/*
+	window.onload=function(){
+ var  oDiv=document.getElementById('div1')
+oDiv.onmouseover=function(){
+setMove(0)
+}	
+oDiv.onmouseout=function(){
+	setMove(-200)
+}
+
+}
+
+timer=null;
+function setMove(itarget){
+clearInterval(timer)
+timer=setInterval(function(){
+var speed=0;
+if(oDiv.offsetLeft>itarget){
+	speed=-10;
+
+}else{
+	speed=10;
+}
+	if(oDiv.offsetLeft==itarget){
+		clearInterval(timer);
+}else{
+oDiv.style.Left=oDiv.offsetLeft+speed+'px';
+
+}
+},30)
+
+}
+*/
+
+
+
+
+	</script>
+</head>
+<body>
+	<div id='div1'><span id='show'>分享到</span> </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<style type="text/css">
+*{
+magin:0;
+padding:0;
+}
+#cvs{
+border:1px solid red;
+box-shadow:10px 10px 10px gray;
+}
+</style>
+ </head>
+ <body>
+  <canvas id="cvs" width="1000" height="600"></canvas>
+<script type="text/javascript">
+
+var cvs=document.getElementByld('cvs');
+var ctx=cvs.getContext('2d');
+<!-- 创建图片 -->
+var img=new Image();
+
+img.src="C:/Users/pc/Pictures/V3tKkYNGiUhI1gQUdMv.jpg";
+img.onload=function(){
+cvs.beginPath();
+ctx.drawImge(img,0,0);<!-- 从画布原点开始绘画图片 -->
+<!--添加鼠标事件  -->
+cvs.onmouseover=function(){
+cvs.onmousemove=function(e){
+	<!-- 每次鼠标都要清除画布 -->
+ctx.clearRect(0,0,cvs.width,cvs.height);
+
+ctx.drawImge(img,0,0);<!-- 将图片绘制到画布上 -->
+
+var ev=e||windows.event;<!-- 移动时不断获取鼠标位置 -->
+var x=ev.clientx - cvs.offsetLeft;
+<!-- 获取鼠标相对于画布上的位置 -->
+var y=ev.clienty - cvs.offsetTop;
+
+ctx.drawImge(img,x-50,y-50,100,100,x-100,y-100,200,200);<!-- 开始绘制放大区域 -->
+
+
+}
+
+}
+
+cvs.onmouseout=function(){
+ctx.clearRect(0,0,cvs,width,cvs.height);
+
+
+}
+
+}
+
+</script>
+
+
+ </body>
+</html>

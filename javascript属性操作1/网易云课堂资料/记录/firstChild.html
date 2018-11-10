@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oBx=fna(ul1,'box')
+   for(var i=0;i<oBx.length;i++){
+   	oBx[i].style.background='red';
+   }
+
+    	
+
+    	function fna(oparent,oclass){
+var aRe=[];
+    var  aEl= oparent.getElementsByTagName('*')
+   for(var i=0;i<aEl.length;i++){
+  if(aEl[i].className=='oclass'){
+  aRe.push(aEl[i]);
+}
+}
+return aRe;
+}
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li class='box'>1</li>
+	<li class="box">2</li>
+	<li>3</li>
+	<li>4</li>
+	<li class="box">5</li>
+</ul>
+</body>
+</html>

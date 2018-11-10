@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+<script>
+/*window.onload=function(){
+var oInp=document.getElementsByTagName('input')
+oInp[1].onclick=function(){
+if(checkNum(oInp[0].value)){
+	alert('恭喜，全是数字')
+}else{
+	alert('不是数字')
+}
+
+}
+
+function checkNum(str){
+var n=0;
+for(var i=0;i<str.length;i++){
+	n=str.charCodeAt(i)
+if(n<48||n>57)return false;
+
+}
+return true;
+}
+
+
+}
+
+var str="";
+for(var i=0;i<1000;i++){
+	str += String.fromCharCode(i);
+}
+
+document.body.innerHTML=str;
+*/
+
+window.onload=function(){
+
+function checknum(){
+
+var n=0;
+var str='';
+for(var i=0;i<str.length;i++)
+{
+	n=str.charCodeAt(i)
+	if(n<48||n>57)
+		return false;
+	}
+return true;
+
+}
+
+
+var oInp=document.getElementsByTagName('input')
+oInp[1].onclick=function(){
+
+if(checknum(oInp[0].value)){
+	alert('是数字')
+}else {
+alert('不是数字')
+}
+
+
+
+
+
+}
+
+}
+
+
+
+
+</script>
+<body>
+		<!--<input type="text" >
+       <input type="button" value="检测">
+-->
+
+
+<div class='top'>n	
+	
+
+</div>
+
+
+	</body>
+	</html>	
+
+	

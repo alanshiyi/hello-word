@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饼状图</title>
+    <style>
+        .pie {
+            position: relative;
+            width: 300px;
+            line-height: 300px;
+            border-radius: 50%;
+            background: yellowgreen;
+            background-image:  linear-gradient(to right, transparent 50%, #655 0); color: transparent;
+            text-align: center;
+
+            margin: 50px auto;
+        }
+        @keyframes spin {
+            to { transform: rotate(.5turn); }
+        }
+        @keyframes bg {
+            50% { background: #655; }
+        }
+        .pie::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            border-radius: 0 100% 100% 0 / 50%;
+            background-color: inherit;
+            transform-origin: left;
+            animation: spin 1s linear infinite, bg 2s step-end infinite;
+            animation-delay: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="pie">60s</div>
+</body>
+</html>
+ 

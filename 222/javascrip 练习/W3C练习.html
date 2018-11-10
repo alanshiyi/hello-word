@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!--<p id="p1">这是一段文本。</p>
+
+<input type="button" value="隐藏文本" onclick="document.getElementById('p1').style.visibility='hidden'" />
+<input type="button" value="显示文本" onclick="document.getElementById('p1').style.visibility='visible'" />
+
+
+<h1 onclick="changetext(this)"> 请点击该文本</h1>
+<p  id="demo"></p>
+<button onclick="displayDate()">点击这里</button>
+<p>  点击按钮可以运行displyDate()函数</p>
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style='background-color: green;width:200px;height:200px;padding-right: padding：40px;color:#ffffff;'>把鼠标移到上面</div>
+
+<
+<p></p><b>Insert a number into one of the input fields below:</b></p>
+<form>
+<input id="c" name="c" onkeyup="convert('C')"> degrees Celsius<br>
+equals<br> 
+<input id="f" name="f" onkeyup="convert('F')"> degrees Fahrenheit 
+</form>
+<p>Note that the <b>Math.round()</b> method is used, so that the result wil
+
+
+
+
+-->
+ <p id='demo'>点击按钮将数组作为字符串输出</p>
+<button onclick="myfunction()">点我</button>
+<p id= "demo"></p>
+ 
+
+
+	<script>
+/*		
+// alert(document);//[object HTMLDocument]
+
+// alert(document.nodeType);9
+//alert(document.nodeValue)null
+// alert(document.nodeName)#document
+// alert(document.childNodes[0]);[object DocumentType]
+//alert(document.childNodes[0].nodeName)
+
+// var box = document.getElementById('box');
+/*
+// alert(box.firstChild.nodeValue);
+// alert(box.lastChild.nodeValue);
+// alert(box.parentNode)
+// alert(box.firstChild.nextSibling.nodeName)
+// alert(box.lastChild.previousSibling.nodeName);
+
+// alert(box.lastChild.previousSibling.nodeValue)
+
+	
+// alert(box.attributes.length )
+// alert(box.attributes[0])// 集合数组
+// alert(box.attributes[0].nodeValue)
+alert(box.attributes[0].nodeName)//第一个class的属性名
+alert(box.attributes[0].nodeValue)//第一个属性的属性值
+alert(box.attributes[0].nodeType)//属性节点的类型值
+
+function removeWhiteNode(node){
+
+for (var i=0;i<node.length;i++){
+
+	if (node[i]nodeType===3&&/^\s+&/.test(node[i].nodeValue)){
+		node[i]parentNode.removeWhiteNode[i];
+	}else{
+		ret.push(node[li]);
+	}
+}
+return node;
+
+
+
+
+}
+var  p= document.createElement('p')
+
+box.appendChild(p)
+var text=document.createTextNode('测试')
+p.appendChild(text);
+
+document.getElementByTagName('body')[0].appendChild(p);
+
+
+
+
+//alert(box.attributes['class'].nodeValue);
+// 忽略空白字符
+
+// alert(removeWhiteNode(box.childNodes))
+
+
+var p= document.createElement('p');
+box.parentNode.insertBefore(p,box);//在box父节点添加一个p，就是在box前面添加一个元素节点；
+
+function  insertAfter(newElement,targetElement){
+	//得到父节点。就是body，但是不能直接使用body,如果层次较多，父节点不一定是body;
+	var parent=targetElement.parentNode;
+	if (parent.lastChild===targetElement){
+	alert('');
+
+  parent.appendChild(newElement,targetElement){
+
+  }else
+
+  parent.insertBefore(newElement,targetElement.nextSibling)
+}
+
+var box = document.createElement('div')
+var text = document.createTextNode('Mr')
+var text2 = document.createTextNode('Lee')
+box .appendChild(text);
+box.appendChild(text2)
+box.normalize()//两个合并
+
+document.body.appendChild(box)
+alert(box.childNodes.length)
+var element = document.createElement('div')
+element.className = 'message';
+var textNode = document.createTextNode('Hello world')
+element.appendChild(textNode);
+var anotherTextNode = document.createTextNode('Yippee')
+elment.body.appendChild(element);
+
+var newNode=element.firstChild.splitText(5);在hello world单词中的第五位开始切割；
+
+alert(element.firstChild.nodeValue)
+alert(newNode.nodeValue)
+alert(element.childNodes.length)
+
+
+var element = document.createElement('div')
+element.className='message'
+var textNode = document.createTextNode('Hello world')
+element.appendChild(textNode)
+ document.body.appendChild(element);
+
+ 
+
+ alert(element.childNodes.length);
+
+
+ element.normalize();
+
+ alert(element.childNodes.length);
+   
+
+
+
+
+function loadStyles(url){
+var link = document.createElement('link');
+link.rel='stylesheet'
+link.type = 'text/css'
+link.href = 'style.css'
+var head=docment.getElementsByTagame('head')[0]
+head.appendChild(link);
+}
+
+loadStyles();
+
+
+
+//用js添加css属性
+
+var style = document.createElement('style')
+style.type='text/css';
+style.appendChild(document.createTextNode('body{background-color:red}'));
+var head = document.getElementsByTagName('head')[0];
+head.appendChild(style);
+
+
+
+var style = document.createElement('style');
+style.type = 'text/css';
+try{style.appendChild(document.createTextNode('body{background-color:red}'));
+
+
+}cath(ex){
+	style.stylesheet.cssText
+}
+//创建表格
+//创建table
+var table = document.createElement('table')
+table.boder=1;
+table.width='100%';
+//c创建tbody
+var tbody = document.createElement('tbody')
+table.appendChild(tbody)
+//创建 第一行
+var rowl = document.createElement('tr')
+tbody.appendChild('rowl');
+var celll_l= document.createElemnet('td')
+celll_l.appendChild(document.createTextNode('cell 1,1'))
+rowl.appendChild('celll_l')
+var cell2_1 = document.createElement('td');
+  cell2_1.appendChild(document.createTextNode('cell 2,1'));
+  rowl.appendChild(cell2_1);
+
+
+  
+
+  //第二行
+  var rowl2 = document.createElement('tr');
+  tbody.appendChild('rowl2');
+  var celll_2 = document.createElement('td');
+  celll_2.appendChild(document.createTextNode('cell 1,2'))
+rowl2.appendChild(celll_2);
+var cell2_1 = document.createElement('td');
+  cell2_1.appendChild(document.createTextNode('cell 2.1'))
+rowl2.appendChild(cell2_1);
+//将表格添加到文档主体中
+
+
+document.body.appendChld(table);
+//创建table
+var table = document.createElement('table')
+table.border= 1;
+
+table.width='100%';
+
+
+//创建tbody
+var tbody = document.createElement('tbody')
+ table.appendChild(tbody)
+//创建第一行
+tbody.insertRow(0);
+tbody.rows[0].insertCell(0);
+tbody.rows[0].cells[0].appendChild(document.createTextNode('cell 1,1'))
+tbody.rows[0].insertCell(1);
+tbody.rows[0].cells[1].appendChild(document.createTextNode('cell 2,1'));
+
+//创建的二行
+tbody.insertRow(1);
+tbody.rows[1].insertCell(0);
+tbody.rows[1].cells[0].appendChild(document.createTextNode('cell 1,2'));
+tbody.rows[1].insertCell(1);
+tbody.rows[1].cells[1].appendChild(document.createTextNode('cell 2,2'))
+
+
+document.body.appendChild(table);
+
+var table = document.createElement('table');
+	table.width = 300;			//table.setAttribute('width', 300);
+	table.border = 1;
+
+
+	var caption = document.createElement('caption');
+	table.appendChild(caption);
+	//caption.innerHTML = '人员表';
+	var captionText = document.createTextNode('人员表');
+	caption.appendChild(captionText);
+	
+	var thead = document.createElement('thead');
+	table.appendChild(thead);
+	
+	var tr = document.createElement('tr');
+	thead.appendChild(tr);
+	
+	var th = document.createElement('th');
+	tr.appendChild(th);
+	
+	th.appendChild(document.createTextNode('数据1'));
+	
+	var th2 = document.createElement('th');
+	tr.appendChild(th2);
+	th2.appendChild(document.createTextNode('数据2'));
+	
+	document.body.appendChild(table);
+	
+
+
+    var table=document.getElementsByTagName('table')[0];
+   //alert(table.caption.innerHTML)
+   //table.caption.innerHTML='是出表'
+
+  //alert(table.tHead.)
+alert(table.tBodies[0]);
+alert(table.rows.length)//行数
+alert(table.tBodies[0].rows[1].cells[1].innerHTML)
+
+var table = document.createElement('table')
+table.width= 300;
+table.border=1;
+table.createcaption().innerHTML='人员表'
+
+var thead= table.createTHead();
+var tr = thead.insertRow(0);
+tr.insertCell(0).innerHTML='世居伊';
+tr.insertCell(1).innerHTML = '数据2';
+	tr.insertCell(2).innerHTML = '数据3';
+	
+	document.body.appendChild(table);
+
+	function myfunction(){
+	var x;
+	var d= new Date().getDay();
+	switch(d){
+		case 0 :x='日';
+		break;
+		case 1:x='一';
+		break;
+		case 2:x='二';
+		break;
+		case 3:x='三';
+		break;
+		case 4:x='四';
+		break;
+		case 5:x='五';
+		break;
+		case 6:x='六';
+		break;
+		
+	}
+	document.getElementById('demo').innerHTML="今天是星期"+x;
+}
+function myfunction(a,b){
+	
+	var x;
+	var txt = ' ';
+    var person={fname:'bill'}
+		x=x+'<h'+i+'>alanshiyi'+i+'</h'+i+'>';
+		i++;
+	}
+
+	while(i<5)		
+	
+	document.getElementById('demo').innerHTML=x;
+}
+var i;
+var mycars= new Array();
+mycars[0]='bi';
+mycars[1]='fvji';
+mycars[2]='hil';
+
+for (i=0;i<mycars.length;i++){
+	document.write(mycars[i]+'<br>');
+}
+
+
+
+function myFunction(){
+	var hege = ["Cecilie", "Lone"];
+	var stale = ["Emil", "Tobias", "Linus"];
+	var children = hege.concat(stale);
+	var x=document.getElementById("demo");
+	x.innerHTML=children;
+}
+
+	function myfunction(){
+	var x=' ',i=0;
+	do{
+		x=x+'该数字为'+i+'<br>';
+		i++;
+
+	}
+	while (i<5)
+		document.getElementById("demo").innerHTML=x;
+}//do while 循环数组
+
+
+function myfunction(){
+
+
+var x; 
+	var txt='';
+	var person={fname:"Bill",lname:"Gates",age:56};
+	for(x in person){
+		txt=txt+person[x];
+	}
+	document.getElementById("demo").innerHTML=txt;
+}//for in 遍历数组；var txt ="";
+function myfunction(){
+	try {
+		addlert("wellcome guest!");
+
+	}
+      catch(err){
+      	txt = '本页有一个错误。\n\n ';
+      	txt+ = "错误描述："+err.myfunction+"\n\n"
+     txt+ = "点击确定继续。  \n\n"
+     alert(txt);
+      }
+	}//错误站点
+function myfunction(){
+	setTimeout(function(){
+		alert('Hello')},3000);
+
+}//三秒后跳出页面  计时器
+
+function myfunction(){
+   var t=setTimeout("alert(5秒！)",1000)
+}
+
+
+body
+<form>
+<input type="button" value="开始计时！" onClick="myfunction()">
+<input type="text" id="txt">
+<input type="button" value="暂停计时！" onClick="stopCount()">
+</form>
+
+var c=0;
+var t
+function myfunction(){
+   document.getElementById('txt').value=c
+   c=c+1
+   t=setTimeout('myfunction()',1000)
+}//无穷计时器
+
+//带有暂停的计时器；
+
+function stopCount(){
+  c=0;
+  setTimeout("document.getElementById('txt').value=0",0);
+  clearTimeout(t);
+}
+
+
+
+
+//制作时钟
+function startTime(){
+var today= new Date() 
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+m= checkTime(m);
+s=checkTime(s)
+document.getElementById('txt').innerHTML=h+':'+m+':'+s
+
+t=setTimeout('startTime()',500);
+
+}
+
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+// add a zero in front of numbers<10
+m=checkTime(m)
+s=checkTime(s)
+document.getElementById('txt').innerHTML=h+":"+m+":"+s
+t=setTimeout('startTime()',500)
+}
+
+function checkTime(i)
+{
+if (i<10) 
+  {i="0" + i}
+  return i
+}
+//显示隐藏文本
+function  changetext(id){
+	id.innerHTML="谢谢！"
+}
+
+function  displayDate(){
+	document.geElementById("demo").innerHTML=new Date();
+}
+function mOver(obj){
+	obj.innerHTML='谢谢！'
+}
+function mOut(obj){
+	obj.innerHTML="把鼠标移到上面"
+}
+
+
+
+var table=document.createElement("table")
+table.width= 200;
+table.border=1;
+
+table.createCaption().innerHTML='人员表';
+var  thead= table.createTHead();
+var tr = thead.insertRow(0)
+tr.insertCell[0].innerHTML='数据1';
+tr.insertCell[1].innerHTML='数据2';
+tr.insertCell[2].innerHTML='数据3';
+
+
+document.body.appendChild(table);
+
+var box=document.getElementById('box');
+alert(box.style);
+// alert(document.implementtation.hasFeature('CSS',))
+//我这种人的性格就是不想和任何人结仇，不想亏欠任何人，宁愿别人欠我，也不愿我欠别人，做好自己应该的，
+
+// 用数组的元素组成字符串
+function  myfunction (){
+   var fruits=['Banana','orange','apple','mange'];
+   var x= document.getElementById('demo');
+   x.innerHTML=fruits.join();
+}
+
+// 三处最后一项
+var fruits=['Banana','orange','apple','mange'];
+function myfunction(){
+	fruits.pop();
+	var x=document.getElementById('demo');
+	x.innerHTML=fruits;
+
+}
+// 颠倒排序
+var fruits= ['banana','orange','apple','mango']
+	function myfunction(){
+		fruits.reverse();
+		var x=document.getElementById('demo');
+		x.innerHTML=fruits;
+	}
+
+	// 删除第一个元素
+var fruits= ['banana','orange','apple','mango']
+	function myfunction(){
+		fruits.shift();
+		var x=document.getElementById('demo');
+		x.innerHTML=fruits;
+	}
+function myfunction(){
+var fruits= ['banana','orange','apple','mango']
+	var citrus= fruits.slice(1,3)
+		var x=document.getElementById('demo');
+		x.innerHTML=citrus;
+	}
+
+// 转化华氏温度
+
+function convert(degree)
+{
+
+if (degree=='C')
+{
+F=document.getElemnetById('c').value*9/5+32;
+document.getElementById('f').value=Math.round(F);
+}
+  else{
+  	C=（document.getElementById('f').value-32）*5/9;
+  	document.getElementById('c').value=Math.round(C);
+  }
+}
+/ for in 便李函数
+function myfunction(){
+	var x;
+	var txt='';
+	var person={fname:'Bill',lname:'Gates',age:56}
+	for(x in person){
+		txt=txt+person[x];
+
+	}
+	document.getElementById('demo').innerHTML=txt;
+}
+function myfunction(){
+	//alert('你好，我是一个警告框')
+
+var x;
+var r=confirm('按下按钮');
+if(r==ture){
+	x='你按了确定按钮';
+}
+else{
+	x='你按了取消按钮';
+}
+documentElementById('demo').innerHTML=x;
+
+function myfuntion(){
+ var x;
+ var person=prompt('请输入你的名字'，'Harry Potter');
+ if (person!=prompt())
+}
+
+
+*/
+
+
+function myfunction(){
+	myWindow=window.open('','','width=200,height=100')
+	myWindow.document.write('<p>This is myWindow</p>')
+	myWindow.focus();
+	myWindow.opener.document.write('<p>This is the source window!</p>')
+}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

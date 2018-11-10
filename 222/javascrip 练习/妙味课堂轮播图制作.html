@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shiyan</title>
+
+
+	<style>
+	*{
+	margin:0;
+	padding:0;}
+		
+#content{
+ 
+    width: 240px;
+    height: 210px;
+    border:1px solid #666;
+    margin:100px auto;
+	position: relative;
+
+
+}
+ul{
+ position:absolute;
+ left:0;
+ top:0;
+}
+
+#content ul li {
+	float:left;
+	
+	list-style:none;
+}
+	</style>
+
+<script>
+	window.onload=function(){
+
+  var oDiv=document.getElementById('content')
+
+  var oUl=document.getElementsByTagName('ul')
+  var aLi=document.getElementsByTagName('li')
+
+
+
+  oUl.innerHTML += oUl.innerHTML;
+  oUl.style.height=240*aLi.length+'px';
+
+
+
+
+ 
+
+
+</script>
+
+
+</head>
+<body>
+	
+
+	<div id="content">
+		<ul>
+		<li><img src="img/dinosaur.png" ></li>
+        </ul>
+   
+	</div>
+</body>
+</html>
